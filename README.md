@@ -16,5 +16,8 @@ I'm publishing these interpretations of data already in the public domain purely
 ## Dorset daily cases
 ![Dorset daily cases](daily_dorset_cases.png?raw=true)
 
+## Dorset MSOA rolling rates
+[![Dorset MSOA rolling rates](dorset_msoa_cases.png)](msoa_cases.html)
+
 ## Dorset daily hospital admissions
 ![Dorset daily admissions](daily_dorset_admissions.png?raw=true)
