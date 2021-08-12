@@ -17,6 +17,7 @@ I'm publishing these interpretations of data already in the public domain purely
 ![Dorset daily cases](daily_dorset_cases.png?raw=true)
 
 ## Dorset MSOA rolling rates
+The MSOA rolling rates are presented as a separate web page.
 [![Dorset MSOA rolling rates](dorset_msoa_cases.png)](msoa_cases.html)
 
 ## Dorset daily hospital admissions
