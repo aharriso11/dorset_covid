@@ -14,7 +14,7 @@ I'm publishing these interpretations of data already in the public domain purely
 ![England daily cases](daily_england_cases.png?raw=true)
 
 ## Dorset daily cases
-![Dorset daily cases](daily_dorset_cases.png?raw=true)
+[![Dorset daily cases](daily_dorset_cases.png)](daily_dorset_cases.png?raw=true)
 
 ## Dorset MSOA rolling rates
 The MSOA rolling rates are presented as a separate web page.
