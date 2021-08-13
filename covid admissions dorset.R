@@ -1,3 +1,8 @@
+# SET COMMON VARIABLES ----
+
+# set working directory
+setwd("~/Documents/GitHub/dorset_covid")
+
 # LOAD LIBRARIES ----
 
 # Install the pacman package to call all the other packages
@@ -48,5 +53,4 @@ admissions_plot +
   theme_bw()
 
 # save to daily file
-ggsave("~/Documents/R/daily_dorset_admissions.png", width = 16.6, height = 8.65, units = "in")
-ggsave("~/Documents/Github/dorset_covid/daily_dorset_admissions.png", width = 16.6, height = 8.65, units = "in")
+ggsave("daily_dorset_admissions.png", width = 16.6, height = 8.65, units = "in")
