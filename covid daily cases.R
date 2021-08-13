@@ -1,8 +1,19 @@
+# SET COMMON VARIABLES ----
+
+# set working directory
+setwd("~/Documents/GitHub/dorset_covid")
+
 # LOAD LIBRARIES ----
 
-library("ggplot2")
-library("dplyr")
-library("zoo")
+# Install the pacman package to call all the other packages
+if (!require("pacman")) install.packages("pacman")
+
+# Use pacman to install (if req) and load required packages
+pacman::p_load(
+  ggplot2,
+  dplyr,
+  zoo
+)
 
 # IMPORT DATASET ----
 
@@ -32,5 +43,4 @@ covid_cases_plot +
   theme_bw()
 
 # save to daily file
-ggsave("~/Documents/R/daily_england_cases.png", width = 16.6, height = 8.65, units = "in")
-ggsave("~/Documents/Github/dorset_covid/daily_england_cases.png", width = 16.6, height = 8.65, units = "in")
+ggsave("daily_england_cases.png", width = 16.6, height = 8.65, units = "in")

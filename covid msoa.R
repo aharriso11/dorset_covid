@@ -1,7 +1,7 @@
 # SET COMMON VARIABLES ----
 
 # set working directory
-setwd("/Users/andrewharrison/Documents/GitHub/dorset_covid")
+setwd("~/Documents/GitHub/dorset_covid")
 
 # LOAD LIBRARIES ----
 
@@ -14,7 +14,8 @@ pacman::p_load(
   dplyr,
   zoo,
   reshape2,
-  plotly
+  plotly,
+  webshot
 )
 
 # IMPORT DATASETS ----
@@ -46,10 +47,13 @@ covid_cases_msoa_plot <- ggplot() +
   ggtitle("Dorset MSOAs - weekly covid rolling rate", subtitle = paste("Data from Public Health England / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "))
   
 # create dynamic plot
+covid_cases_msoa_plot
+
 covid_cases_msoa_dynamic_plot <- ggplotly(covid_cases_msoa_plot, tooltip = c("text"))
 
 covid_cases_msoa_dynamic_plot
 
 # save to daily file
+orca(covid_cases_msoa_dynamic_plot, file = "dorset_msoa_cases.png")
 htmlwidgets::saveWidget(as_widget(covid_cases_msoa_dynamic_plot), "msoa_cases.html")
 

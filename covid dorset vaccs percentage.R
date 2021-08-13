@@ -1,8 +1,19 @@
+# SET COMMON VARIABLES ----
+
+# set working directory
+setwd("~/Documents/GitHub/dorset_covid")
+
 # LOAD LIBRARIES ----
 
-library("ggplot2")
-library("tidyr")
-library("reshape")
+# Install the pacman package to call all the other packages
+if (!require("pacman")) install.packages("pacman")
+
+# Use pacman to install (if req) and load required packages
+pacman::p_load(
+  ggplot2,
+  tidyr,
+  reshape
+)
 
 # IMPORT DATASETS ----
 
@@ -49,5 +60,4 @@ covid_vaccs_percentage_plot
 # SAVE OUTPUT ----
 
 # save to daily file
-ggsave("~/Documents/R/daily_dorset_vaccs_percentage.png", width = 16.6, height = 8.65, units = "in")
-ggsave("~/Documents/Github/dorset_covid/daily_dorset_vaccs_percentage.png", width = 16.6, height = 8.65, units = "in")
+ggsave("daily_dorset_vaccs_percentage.png", width = 16.6, height = 8.65, units = "in")
