@@ -1,10 +1,16 @@
 # LOAD LIBRARIES ----
 
-library("ggplot2")
-library("dplyr")
-library("zoo")
-library("reshape2")
-library("reshape")
+# Install the pacman package to call all the other packages
+if (!require("pacman")) install.packages("pacman")
+
+# Use pacman to install (if req) and load required packages
+pacman::p_load(
+  ggplot2,
+  dplyr,
+  zoo,
+  reshape2,
+  reshape
+)
 
 # IMPORT DATASETS ----
 
