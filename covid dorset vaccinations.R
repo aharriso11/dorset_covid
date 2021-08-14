@@ -60,5 +60,4 @@ covid_vaccs_plot
 # SAVE OUTPUT ----
 
 # save to daily file
-ggsave("~/Documents/R/daily_dorset_vaccinations.png", width = 16.6, height = 8.65, units = "in")
-ggsave("~/Documents/Github/dorset_covid/daily_dorset_vaccinations.png", width = 16.6, height = 8.65, units = "in")
+ggsave("daily_dorset_vaccinations.png", width = 16.6, height = 8.65, units = "in")
