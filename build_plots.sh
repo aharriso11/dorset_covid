@@ -13,6 +13,7 @@ touch "timestamp${commit_string}"
 /usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid dorset vaccinations.R"
 /usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid dorset vaccs percentage.R"
 /usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid msoa.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid cases age.R"
 
 cd /users/andrewharrison/Documents/Github/sandpit
 

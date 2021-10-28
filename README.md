@@ -20,5 +20,9 @@ I'm publishing these interpretations of data already in the public domain purely
 The MSOA rolling rates are presented as a separate web page.
 [![Dorset MSOA rolling rates](dorset_msoa_cases.png)](msoa_cases.html)
 
+## Dorset new cases by age
+The new cases breakdown by age groups are shown on a separate web page.
+[![Dorset new cases by age](dorset_age_cases.png)](age_cases.html)
+
 ## Dorset daily hospital admissions
 [![Dorset daily admissions](daily_dorset_admissions.png)](daily_dorset_admissions.png?raw=true)

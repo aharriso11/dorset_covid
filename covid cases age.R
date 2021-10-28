@@ -48,6 +48,11 @@ covid_cases_age_plot <- ggplot() +
 
 covid_cases_age_plot
 
+# create dynamic plot
 covid_cases_age_dynamic_plot <- ggplotly(covid_cases_age_plot)
 
 covid_cases_age_dynamic_plot
+
+# save to daily file
+orca(covid_cases_age_dynamic_plot, file = "dorset_age_cases.png")
+htmlwidgets::saveWidget(as_widget(covid_cases_age_dynamic_plot), "age_cases.html")
