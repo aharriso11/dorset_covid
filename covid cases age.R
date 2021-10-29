@@ -39,6 +39,7 @@ covid_cases_age_combined$date = as.Date(covid_cases_age_combined$date, "%Y-%m-%d
 # create plot and geom
 covid_cases_age_plot <- ggplot() +
   geom_line(data = covid_cases_age_combined, aes(x = date, y = cases, col = age), size = 0.5) +
+  geom_point(data = covid_cases_age_combined, aes(x = date, y = cases, col = age, text = paste("Age band:", age, "<br>Cases:", cases, "<br>Date:", date)), size = 1) +
   xlab("Date") +
   ylab("New cases") +
   labs(color = "Age bands") +
