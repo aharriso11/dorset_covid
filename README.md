@@ -8,7 +8,9 @@ I'm publishing these interpretations of data already in the public domain purely
 
 For authoritative information regarding the prevalence of covid-19 in Dorset or BCP you should visit the website of [Public Health Dorset](https://www.publichealthdorset.org.uk/).
 
-If you find these statistics of interest you may also enjoy my blog posts on [generating the R code behind the England case rates plot](https://www.ajharrison.org.uk/2021/05/03/interpreting-covid-case-rates-with-r/), and the [importance of working with 'long data' as opposed to 'wide data'](https://www.ajharrison.org.uk/2021/05/22/converting-wide-data-into-long-with-r/). You can also look at the underlying R source code at [https://github.com/aharriso11/dorset_covid](https://github.com/aharriso11/dorset_covid)
+If you find these statistics of interest you may also enjoy my blog posts on [generating the R code behind the England case rates plot](https://www.ajharrison.org.uk/2021/05/03/interpreting-covid-case-rates-with-r/), and the [importance of working with 'long data' as opposed to 'wide data'](https://www.ajharrison.org.uk/2021/05/22/converting-wide-data-into-long-with-r/). You can also look at the underlying R source code at [https://github.com/aharriso11/dorset_covid](https://github.com/aharriso11/dorset_covid).
+
+You can see a larger version of each data plot by clicking on it.
 
 ## Dorset daily vaccinations
 Booster or third vaccination data are not yet published to local authority level, to see national level data plots that show these [visit the relevant page of the PHE covid dashboard](https://coronavirus.data.gov.uk/details/vaccinations?areaType=nation&areaName=England).
@@ -25,11 +27,11 @@ Booster or third vaccination data are not yet published to local authority level
 [![Dorset daily cases](daily_dorset_cases.png)](daily_dorset_cases.png?raw=true)
 
 ## Dorset MSOA rolling rates
-The MSOA rolling rates are presented as a separate web page.
+A dynamic data plot showing the MSOA rolling rates can be seen on a [separate web page](msoa_cases.html).
 [![Dorset MSOA rolling rates](dorset_msoa_cases.png)](msoa_cases.html)
 
 ## Dorset new cases by age
-The new cases breakdown by age groups are shown on a separate web page.
+A dynamic data plot showing the new cases broken down by age can be seen [on a separate web page](age_cases.html).
 [![Dorset new cases by age](dorset_age_cases.png)](age_cases.html)
 
 ## Dorset daily hospital admissions
