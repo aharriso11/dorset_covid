@@ -15,6 +15,9 @@ touch "timestamp${commit_string}"
 /usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid msoa.R"
 /usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid cases age.R"
 
+vardate="Data plots last updated: "$(date +%Y-%m-%d)
+sed -i '' -e "1s/.*/$vardate/" README.md
+
 cd /users/andrewharrison/Documents/Github/sandpit
 
 echo "push_${commit_string}"
