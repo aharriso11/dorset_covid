@@ -15,7 +15,8 @@ pacman::p_load(
   zoo,
   reshape2,
   plotly,
-  webshot
+  webshot,
+  lubridate
 )
 
 # IMPORT DATASETS ----
@@ -30,7 +31,7 @@ covid_cases_msoa_bcp <- read.csv(url("https://api.coronavirus.data.gov.uk/v2/dat
 covid_cases_msoa_combined <- rbind(covid_cases_msoa_bcp, covid_cases_msoa_dor)
 
 # remove data we don't want
-covid_cases_msoa_combined <- subset(covid_cases_msoa_combined, date > "2021-07-01", select = c("UtlaName", "areaName", "date", "newCasesBySpecimenDateRollingRate"))
+covid_cases_msoa_combined <- subset(covid_cases_msoa_combined, date > today() - months(1), select = c("UtlaName", "areaName", "date", "newCasesBySpecimenDateRollingRate"))
 
 # define the date format
 covid_cases_msoa_combined$date = as.Date(covid_cases_msoa_combined$date, "%Y-%m-%d")
@@ -39,12 +40,14 @@ covid_cases_msoa_combined$date = as.Date(covid_cases_msoa_combined$date, "%Y-%m-
 
 # create plot and geom
 covid_cases_msoa_plot <- ggplot() +
-  geom_smooth(data = covid_cases_msoa_combined, aes(x = date, y = newCasesBySpecimenDateRollingRate, col = areaName), size = 0.5) +
+  geom_smooth(data = covid_cases_msoa_combined, aes(x = date, y = newCasesBySpecimenDateRollingRate, col = areaName), size = 0.5, method = "loess") +
   geom_point(data = covid_cases_msoa_combined, aes(x = date, y = newCasesBySpecimenDateRollingRate, col = areaName, text = paste("MSOA:", areaName, "<br>Rate:", newCasesBySpecimenDateRollingRate, "<br>Date:", date)), size = 1) +
   xlab("Date") +
   ylab("New cases by specimen date rolling rate") +
+  scale_x_date(date_labels = "%d %B", date_breaks = "1 week") +
   labs(color = "MSOAs") +
-  ggtitle("Dorset MSOAs - weekly covid rolling rate", subtitle = paste("Data from Public Health England / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "))
+  ggtitle("Dorset MSOAs - weekly covid rolling rate", subtitle = paste("Data from Public Health England / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ")) +
+  labs(caption = paste("Data from Public Health England / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "))
   
 # create dynamic plot
 covid_cases_msoa_plot

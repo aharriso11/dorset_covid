@@ -42,6 +42,7 @@ covid_cases_age_plot <- ggplot() +
   geom_point(data = covid_cases_age_combined, aes(x = date, y = cases, col = age, text = paste("Age band:", age, "<br>Cases:", cases, "<br>Date:", date)), size = 1) +
   xlab("Date") +
   ylab("New cases") +
+  scale_x_date(date_labels = "%d %B", date_breaks = "1 week") +
   labs(color = "Age bands") +
   ggtitle("Dorset - new covid cases by age group", subtitle = paste("Data from Public Health England / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ")) +
   facet_grid( ~ areaName) +
