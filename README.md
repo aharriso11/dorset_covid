@@ -30,7 +30,7 @@ Booster or third vaccination data are not yet published to local authority level
 
 ## Dorset daily case comparison with other upper tier local authorities
 This chart also shows the top five upper tier local authorities
-[![Dorset daily case comparison](daily_cases_utlas_.png)](daily_cases_utlas_.png?raw=true)
+[![Dorset daily case comparison](daily_cases_utlas.png)](daily_cases_utlas.png?raw=true)
 
 ## Dorset MSOA rolling rates
 A dynamic data plot showing the MSOA rolling rates can be seen on a [separate web page](msoa_cases.html).
@@ -42,6 +42,7 @@ A dynamic data plot showing the new cases broken down by age can be seen [on a s
 
 ## Dorset daily lateral flow device tests recorded
 This chart shows the number of lateral flow device tests (both negative and positive) being recorded each day, broken down by local authority. A negative and positive breakdown is not available at local authority level, for more information on testing [visit the relevant page of the UKHSA dashboard](https://coronavirus.data.gov.uk/details/testing)
+[![Dorset daily LFD tests](daily_lfd.png)](daily_lfd.png)
 
 ## Dorset daily hospital admissions
 The [NHS England website](https://www.england.nhs.uk/statistics/statistical-work-areas/covid-19-hospital-activity/) provides much greater detail on hospital admissions than either this website or the UKHSA dashboard.
