@@ -34,7 +34,9 @@ covid_cases_bcp <- covid_cases_bcp %>%
 covid_cases_com <- merge(covid_cases_bcp, covid_cases_dor, by.x = "date", by.y = "date")
 
 # remove old data we don't want
+less_recent_days <- Sys.Date() - 5
 covid_cases_com <- subset(covid_cases_com, date > "2020-10-31", select = c("date", "cases_07da_bcp", "cases_07da_dor"))
+covid_cases_com <- subset(covid_cases_com, date < less_recent_days)
 
 # convert wide data into long
 melt.cases <- melt(covid_cases_com, id=c("date"), variable.name = "area", value.name = "cases")
@@ -47,7 +49,7 @@ melt.cases$date = as.Date(melt.cases$date, "%Y-%m-%d")
 # create plot and geom
 covid_cases_plot <- ggplot(melt.cases, aes(x = date, y = cases, col = area)) +
   geom_point(shape = 1, size = 2) + scale_colour_manual(name = "Local authority", values = c("cases_07da_dor" = "green4", "cases_07da_bcp" = "darkmagenta"), labels = c("BCP", "Dorset")) +
-  labs(caption = paste("Data from Public Health England / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "))
+  labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "))
 
 # set plot params
 covid_cases_plot + 

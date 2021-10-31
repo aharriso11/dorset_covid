@@ -50,7 +50,7 @@ covid_vaccs_percentage_plot <- ggplot() +
   theme_bw() +
   scale_x_date(date_labels = "%B %Y", date_breaks = "2 months") +
   ggtitle("Dorset covid vaccinations by local authority - population percentage over time") +
-  labs(caption = paste("Data from Public Health England / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ")) +
+  labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ")) +
   xlab("Date") +
   ylab("Vaccinations") +
   scale_y_continuous(breaks = c(20, 40, 60, 80, 100), labels = scales::percent_format(scale = 1), limits = c(0,100))

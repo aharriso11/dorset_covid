@@ -29,7 +29,7 @@ covid_cases_age_combined <- subset(covid_cases_age_combined, age!="60+")
 covid_cases_age_combined <- subset(covid_cases_age_combined, age!="unassigned")
 
 # restrict data to last two months and remove columns we don't want
-covid_cases_age_combined <- subset(covid_cases_age_combined, date > today() - months(1), select = c("areaName", "date", "age", "cases"))
+covid_cases_age_combined <- subset(covid_cases_age_combined, date > today() - days(31), select = c("areaName", "date", "age", "cases"))
 
 # define the date format
 covid_cases_age_combined$date = as.Date(covid_cases_age_combined$date, "%Y-%m-%d")
@@ -44,7 +44,7 @@ covid_cases_age_plot <- ggplot() +
   ylab("New cases") +
   scale_x_date(date_labels = "%d %B", date_breaks = "1 week") +
   labs(color = "Age bands") +
-  ggtitle("Dorset - new covid cases by age group", subtitle = paste("Data from Public Health England / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ")) +
+  ggtitle("Dorset - new covid cases by age group", subtitle = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ")) +
   facet_grid( ~ areaName) +
   theme_bw()
 

@@ -46,8 +46,8 @@ covid_cases_msoa_plot <- ggplot() +
   ylab("New cases by specimen date rolling rate") +
   scale_x_date(date_labels = "%d %B", date_breaks = "1 week") +
   labs(color = "MSOAs") +
-  ggtitle("Dorset MSOAs - weekly covid rolling rate", subtitle = paste("Data from Public Health England / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ")) +
-  labs(caption = paste("Data from Public Health England / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "))
+  ggtitle("Dorset MSOAs - weekly covid rolling rate", subtitle = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ")) +
+  labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "))
   
 # create dynamic plot
 covid_cases_msoa_plot

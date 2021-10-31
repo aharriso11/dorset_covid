@@ -42,7 +42,7 @@ admissions_data_combined$date = as.Date(admissions_data_combined$date, "%Y-%m-%d
 # create plot and geom
 admissions_plot <- ggplot(admissions_data_combined, aes(x = date, y = newAdmissions, col = areaName)) +
   geom_point(shape = 1, size = 2) + scale_colour_manual(name = "NHS Trust", values = c("Dorset County Hospital NHS Foundation Trust" = "red", "University Hospitals Dorset NHS Foundation Trust" = "darkmagenta", "Dorset Healthcare University NHS Foundation Trust" = "chartreuse2")) +
-  labs(caption = paste("Data from Public Health England / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "))
+  labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "))
 
 # set plot params
 admissions_plot +
