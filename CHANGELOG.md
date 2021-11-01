@@ -2,6 +2,11 @@
 
 ## Change log
 
+### Monday 1st November 2021
+
+#### New product
+- Daily case age breakdown - percentage distribution
+
 ### Sunday 31st October 2021
 
 #### New products
