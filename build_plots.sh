@@ -20,7 +20,7 @@ touch "timestamp${commit_string}"
 vardate="Data plots last updated: "$(date +%Y-%m-%d)
 sed -i '' -e "1s/.*/$vardate/" README.md
 
-cd /users/andrewharrison/Documents/Github/sandpit
+cd /users/andrewharrison/Documents/Github/dorset_covid
 
 echo "push_${commit_string}"
 
