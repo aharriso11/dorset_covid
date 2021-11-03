@@ -53,7 +53,7 @@ covid_cases_plot <- ggplot(melt.cases, aes(x = date, y = cases, col = area)) +
 
 # set plot params
 covid_cases_plot + 
-  scale_y_continuous(trans = 'log10', breaks = c(5,10,20,50,100,200,500)) +
+  scale_y_continuous(trans = 'log10', breaks = c(5,10,20,50,100,200,500), position = "right") +
   scale_x_date(date_labels = "%B %Y", date_breaks = "1 month") +
   ggtitle("Dorset covid cases - 7 day average by specimen date (log scale)") +
   xlab("Date") +

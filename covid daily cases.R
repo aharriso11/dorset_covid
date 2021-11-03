@@ -35,7 +35,7 @@ covid_cases_plot <- ggplot(covid_cases_csv[which(covid_cases_csv$date>"2020-10-3
   labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "))
 
 covid_cases_plot + 
-  scale_y_continuous(trans = 'log10', breaks = c(1000,2000,5000,10000,20000,50000)) +
+  scale_y_continuous(trans = 'log10', breaks = c(1000,2000,5000,10000,20000,50000), position = "right") +
   scale_x_date(date_labels = "%B %Y", date_breaks = "1 month") +
   ggtitle("England covid cases - 7 day average by specimen date") +
   xlab("Date") +

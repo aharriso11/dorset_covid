@@ -85,6 +85,7 @@ covid_cases_utlas_plot <- ggplot() +
   geom_line(data = subset_bcp, aes(x = date, y = utla_cases_07da, group = areaName, colour = areaName), colour = "magenta4", size = 2) +
   # x axis config
   scale_x_date(date_labels = "%B %Y", date_breaks = "1 month") +
+  scale_y_continuous(position = "right") +
   # labels
   xlab("Date") +
   ylab("New cases 7 day average") +

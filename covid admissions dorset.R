@@ -46,7 +46,7 @@ admissions_plot <- ggplot(admissions_data_combined, aes(x = date, y = newAdmissi
 
 # set plot params
 admissions_plot +
-#  scale_y_continuous(trans = 'log10', breaks = c(1,5,10,20,60)) +
+  scale_y_continuous(position = "right") +
   scale_x_date(date_labels = "%B %Y", date_breaks = "2 months") +
   xlab("Date") +
   ylab("Admissions") +
