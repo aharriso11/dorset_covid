@@ -16,7 +16,9 @@ pacman::p_load(
   reshape2,
   lubridate,
   plotly,
-  data.table
+  data.table,
+  ggthemes,
+  extrafont
 )
 
 # IMPORT DATASETS ----
@@ -78,7 +80,7 @@ plot_labels_right <- data.table(labels_right_x = labels_right_x, labels_right_y 
 # create the plot
 covid_cases_utlas_plot <- ggplot() +
   # background data
-  geom_line(data = covid_cases_utlas, aes(x = date, y = utla_cases_07da, group = areaName, colour = areaName), colour = "gray76") +
+  geom_line(data = covid_cases_utlas, aes(x = date, y = utla_cases_07da, group = areaName, colour = areaName), colour = "lightblue3") +
   # Dorset line
   geom_line(data = subset_dor, aes(x = date, y = utla_cases_07da, group = areaName, colour = areaName), colour = "green4", size = 2) +
   # BCP line
@@ -90,13 +92,19 @@ covid_cases_utlas_plot <- ggplot() +
   xlab("Date") +
   ylab("New cases 7 day average") +
   # right hand side labels
-  geom_text(data = plot_labels_right, aes(x = labels_right_x, y = labels_right_y, label = labels_right_text, group = NULL, hjust = "left"), colour = plot_labels_right$labels_right_colour, fontface = "bold", size = 3, nudge_x = 1, angle = 45) +
-  geom_text(data = subset_top5, aes(x = date, y = utla_cases_07da, label = areaName, group = NULL, hjust = "left"), colour = "gray76", fontface = "bold", size = 3, nudge_x = 1, angle = 45) +
+  geom_text(data = plot_labels_right, aes(x = labels_right_x, y = labels_right_y, label = labels_right_text, group = NULL, hjust = "left"), colour = plot_labels_right$labels_right_colour, fontface = "bold", family = "OfficinaSanITC-Book", size = 4, nudge_x = 1, angle = 45) +
+  geom_text(data = subset_top5, aes(x = date, y = utla_cases_07da, label = areaName, group = NULL, hjust = "left"), colour = "lightblue3", fontface = "bold", family = "OfficinaSanITC-Book", size = 3, nudge_x = 1, angle = 45) +
   # set title
   ggtitle("New covid cases - Dorset comparison with England upper tier local authorities") +
   labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ")) +
   # set theme
-  theme_bw()
+  theme_economist(base_family="OfficinaSanITC-Book") +
+  theme(axis.line.x = element_line(size=.5, colour = "black"),
+        legend.position="bottom", 
+        legend.direction="horizontal", 
+        legend.title = element_blank(),
+        plot.title=element_text(family="OfficinaSanITC-Book"),
+        text=element_text(family="OfficinaSanITC-Book"))
   
 covid_cases_utlas_plot
 

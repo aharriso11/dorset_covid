@@ -6,10 +6,12 @@
 
 #### Changes to products
 - Y axis shifted to right hand side for
--- Dorset admissions
--- Dorset daily cases
--- England daily cases
--- UTLA comparison
+ - Dorset admissions
+ - Dorset daily cases
+ - England daily cases
+ - UTLA comparison
+ 
+- Testing a new look on UTLA comparison
 
 ### Monday 1st November 2021
 
