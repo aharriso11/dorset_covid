@@ -21,6 +21,9 @@ pacman::p_load(
   extrafont
 )
 
+# install fonts
+loadfonts()
+
 # IMPORT DATASETS ----
 
 covid_cases_utlas <- read.csv(url("https://api.coronavirus.data.gov.uk/v2/data?areaType=utla&metric=newCasesBySpecimenDate&format=csv"))
