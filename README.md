@@ -37,12 +37,12 @@ This chart also highlights LTLAs most affected by the recent [Immensa PCR testin
 <iframe src="sw_cases.html" title="South west case focus" width=1000 height=700></iframe>
 
 ## Dorset MSOA rolling rates
-A dynamic data plot showing the MSOA rolling rates can be seen on a [separate web page](msoa_cases.html).
-[![Dorset MSOA rolling rates](dorset_msoa_cases.png)](msoa_cases.html)
+A dynamic data plot showing the MSOA rolling rates which can also be seen [at full size on a separate web page](msoa_cases.html).
+<iframe src="msoa_cases.html" title="MSOA case focus" width=1000 height=700></iframe>
 
 ## Dorset new cases by age
-A dynamic data plot showing the new cases broken down by age can be seen [on a separate web page](age_cases.html).
-[![Dorset new cases by age](dorset_age_cases.png)](age_cases.html)
+A dynamic data plot showing the new cases broken down by age which can also be seen [at full size on a separate web page](age_cases.html).
+<iframe src="age_cases.html" title="Age case focus" width=1000 height=700></iframe>
 
 ### New cases by age distribution
 [![New cases by age distribution](dorset_age_cases_percentage.png)](dorset_age_cases_percentage.png?raw=true)
