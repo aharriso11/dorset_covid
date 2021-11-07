@@ -18,11 +18,13 @@ pacman::p_load(
   plotly,
   data.table,
   rjson,
+  ggthemes,
   extrafont
 )
 
 # install fonts
-loadfonts()
+font_import(paths = c("~/Documents/GitHub/dorset_covid"), prompt = F)
+extrafont::loadfonts()
 
 # IMPORT DATASETS ----
 
@@ -130,13 +132,13 @@ covid_cases_sw_plot <- ggplot() +
   ggtitle("New covid cases - Dorset comparison with south west lower tier local authorities") +
   labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ")) +
   # set theme
-  theme_economist(base_family="OfficinaSanITC-Book") +
+  theme_economist(base_family="Officina Sans ITC Book") +
   theme(axis.line.x = element_line(size=.5, colour = "black"),
         legend.position="bottom", 
         legend.direction="horizontal", 
         legend.title = element_blank(),
-        plot.title=element_text(family="OfficinaSanITC-Book"),
-        text=element_text(family="OfficinaSanITC-Book"))
+        plot.title=element_text(family="Officina Sans ITC Book"),
+        text=element_text(family="Officina Sans ITC Book"))
 
 covid_cases_sw_plot
 

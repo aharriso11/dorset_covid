@@ -22,7 +22,8 @@ pacman::p_load(
 )
 
 # install fonts
-loadfonts()
+font_import(paths = c("~/Documents/GitHub/dorset_covid"), prompt = F)
+extrafont::loadfonts()
 
 # IMPORT DATASETS ----
 
@@ -95,19 +96,19 @@ covid_cases_utlas_plot <- ggplot() +
   xlab("Date") +
   ylab("New cases 7 day average") +
   # right hand side labels
-  geom_text(data = plot_labels_right, aes(x = labels_right_x, y = labels_right_y, label = labels_right_text, group = NULL, hjust = "left"), colour = plot_labels_right$labels_right_colour, fontface = "bold", family = "OfficinaSanITC-Book", size = 4, nudge_x = 1, angle = 45) +
-  geom_text(data = subset_top5, aes(x = date, y = utla_cases_07da, label = areaName, group = NULL, hjust = "left"), colour = "lightblue3", fontface = "bold", family = "OfficinaSanITC-Book", size = 3, nudge_x = 1, angle = 45) +
+  geom_text(data = plot_labels_right, aes(x = labels_right_x, y = labels_right_y, label = labels_right_text, group = NULL, hjust = "left"), colour = plot_labels_right$labels_right_colour, fontface = "bold", family = "Officina Sans ITC Book", size = 4, nudge_x = 1, angle = 45) +
+  geom_text(data = subset_top5, aes(x = date, y = utla_cases_07da, label = areaName, group = NULL, hjust = "left"), colour = "lightblue3", fontface = "bold", family = "Officina Sans ITC Book", size = 3, nudge_x = 1, angle = 45) +
   # set title
   ggtitle("New covid cases - Dorset comparison with England upper tier local authorities") +
   labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ")) +
   # set theme
-  theme_economist(base_family="OfficinaSanITC-Book") +
+  theme_economist(base_family="Officina Sans ITC Book") +
   theme(axis.line.x = element_line(size=.5, colour = "black"),
         legend.position="bottom", 
         legend.direction="horizontal", 
         legend.title = element_blank(),
-        plot.title=element_text(family="OfficinaSanITC-Book"),
-        text=element_text(family="OfficinaSanITC-Book"))
+        plot.title=element_text(family="Officina Sans ITC Book"),
+        text=element_text(family="Officina Sans ITC Book"))
   
 covid_cases_utlas_plot
 
