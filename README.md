@@ -33,7 +33,7 @@ This chart also shows the top five upper tier local authorities
 [![Dorset daily case comparison](daily_cases_utlas.png)](daily_cases_utlas.png?raw=true)
 
 ## Dorset daily case comparison with south west lower tier local authorities
-This chart also highlights LTLAs most affected by the recent [Immensa PCR testing failure](https://www.standard.co.uk/news/uk/exeter-government-taunton-somerset-nhs-england-b961477.html) and is presented on this page as a dynamic data plot. You can also view the dynamic data plot [at full size on a separate page](sw_cases.html), or view a [static version](sw_cases.png?raw=true).
+This chart also highlights LTLAs most affected by the recent [Immensa PCR testing failure](https://www.standard.co.uk/news/uk/exeter-government-taunton-somerset-nhs-england-b961477.html) in red and is presented on this page as a dynamic data plot. You can also view the dynamic data plot [at full size on a separate page](sw_cases.html), or view a [static version](sw_cases.png?raw=true).
 <iframe src="sw_cases.html" title="South west case focus" width=1000 height=700></iframe>
 
 ## Dorset MSOA rolling rates
