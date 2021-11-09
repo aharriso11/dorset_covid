@@ -115,12 +115,16 @@ rbd_plot <- ggplot(hosp_combined, aes(x=hdate,y=hnumber)) +
   theme(axis.line.x = element_line(size=.5, colour = "black"),
         legend.position="right", 
         legend.direction="vertical", 
-        legend.title = element_blank(),
+        legend.title = element_text(size = 14),
+        legend.text = element_text(size = 12),
         plot.title=element_text(family="Officina Sans ITC Book", size = 24),
-        plot.subtitle = element_text(family="Officina Sans ITC Book", hjust = 0),
+        plot.subtitle = element_text(family="Officina Sans ITC Book", hjust = 0, vjust = -1.5),
         text=element_text(family="Officina Sans ITC Book"))
 
 rbd_plot
+
+# save to daily file
+ggsave("hosp_rbd.png", width = 16.6, height = 8.65, units = "in")
 
 # R0D plot and geoms
 r0d_plot <- ggplot(hosp_combined, aes(x=hdate,y=hnumber)) +
@@ -152,3 +156,6 @@ r0d_plot <- ggplot(hosp_combined, aes(x=hdate,y=hnumber)) +
         text=element_text(family="Officina Sans ITC Book"))
 
 r0d_plot
+
+# save to daily file
+ggsave("hosp_r0d.png", width = 16.6, height = 8.65, units = "in")
