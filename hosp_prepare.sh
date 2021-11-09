@@ -13,3 +13,14 @@ mv weekly.csv.6 allbedsmv.csv
 
 rm weekly*
 rm Weekly*
+
+death_file_url="https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2021/11/COVID-19-total-announced-deaths-08-November-2021.xlsx"
+death_file_name="COVID-19-total-announced-deaths-08-November-2021.xlsx"
+
+wget $death_file_url
+
+ssconvert -S $death_file_name deaths.csv
+
+mv deaths.csv.8 trustdeaths.csv
+
+rm deaths*
