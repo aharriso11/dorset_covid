@@ -1,7 +1,16 @@
 cd /users/andrewharrison/Documents/GitHub/dorset_covid/hospital_preparation
 
-file_url="https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2021/11/Weekly-covid-admissions-and-beds-publication-211104.xlsx"
-file_name="Weekly-covid-admissions-and-beds-publication-211104.xlsx"
+file_url=$(curl -v --silent https://www.england.nhs.uk/statistics/statistical-work-areas/covid-19-hospital-activity/ 2>&1 | 
+  grep Weekly-covid-admissions | 
+  grep -v up-to |
+  grep -o 'https://[^"]*')
+
+
+file_name=$file_url | cut -d'/' -f10
+
+file_name=https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2021/11/Weekly-covid-admissions-and-beds-publication-211104.xlsx | cut -d'/' -f10
+
+https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2021/11/Weekly-covid-admissions-and-beds-publication-211104.xlsx
 
 wget $file_url
 

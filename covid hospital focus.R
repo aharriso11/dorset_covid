@@ -124,7 +124,7 @@ rbd_plot <- ggplot(hosp_combined, aes(x=hdate,y=hnumber)) +
 rbd_plot
 
 # save to daily file
-ggsave("hosp_rbd.png", width = 16.6, height = 8.65, units = "in")
+ggsave("hosp_rbd.png", plot = "rbd_plot", width = 16.6, height = 8.65, units = "in")
 
 # R0D plot and geoms
 r0d_plot <- ggplot(hosp_combined, aes(x=hdate,y=hnumber)) +
