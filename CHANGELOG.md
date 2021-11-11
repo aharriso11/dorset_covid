@@ -2,6 +2,19 @@
 
 ## Change log
 
+### Thursday 11th November 2021
+
+#### New products
+- Dorset hospital focus
+- South west lower tier local authority comparison
+
+#### Changes to web pages
+- New page for Dorset hospital focus
+- Products with dynamic data plots now have these shown on the main webpage
+ - South west lower tier local authority comparison
+ - MSOA rolling rates
+ - New covid cases by age group
+
 ### Wednesday 3rd November 2021
 
 #### Changes to products

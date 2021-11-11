@@ -52,5 +52,7 @@ This chart shows the number of lateral flow device tests (both negative and posi
 [![Dorset daily LFD tests](daily_lfd.png)](daily_lfd.png)
 
 ## Dorset daily hospital admissions
-The [NHS England website](https://www.england.nhs.uk/statistics/statistical-work-areas/covid-19-hospital-activity/) provides much greater detail on hospital admissions than either this website or the UKHSA dashboard.
+See [NHS trust level data for hospital admissions, bed occupancy and deaths](hospital_activity.MD).
+
+The [NHS England website](https://www.england.nhs.uk/statistics/statistical-work-areas/covid-19-hospital-activity/) provides much greater detail on hospital admissions than either this website or the UKHSA dashboard. 
 [![Dorset daily admissions](daily_dorset_admissions.png)](daily_dorset_admissions.png?raw=true)
