@@ -1,6 +1,11 @@
 # change to working directory
 cd /users/andrewharrison/Documents/GitHub/dorset_covid/hospital_preparation
 
+# delete old files before we begin
+rm weekly*
+rm Weekly*
+rm deaths*
+
 # HOSPITAL ACTIVITY FILE PROCESSING ----
 
 # get weekly hospital activity file URL from NHSE hospital activity page
