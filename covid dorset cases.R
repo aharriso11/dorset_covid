@@ -13,7 +13,8 @@ pacman::p_load(
   ggplot2,
   dplyr,
   zoo,
-  reshape2
+  reshape2,
+  lubridate
 )
 
 # IMPORT DATASETS ----
@@ -35,7 +36,7 @@ covid_cases_com <- merge(covid_cases_bcp, covid_cases_dor, by.x = "date", by.y =
 
 # remove old data we don't want
 less_recent_days <- Sys.Date() - 5
-covid_cases_com <- subset(covid_cases_com, date > "2020-10-31", select = c("date", "cases_07da_bcp", "cases_07da_dor"))
+covid_cases_com <- subset(covid_cases_com, date > today() - months(12), select = c("date", "cases_07da_bcp", "cases_07da_dor"))
 covid_cases_com <- subset(covid_cases_com, date < less_recent_days)
 
 # convert wide data into long

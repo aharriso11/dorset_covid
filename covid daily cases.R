@@ -12,7 +12,8 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(
   ggplot2,
   dplyr,
-  zoo
+  zoo,
+  lubridate
 )
 
 # IMPORT DATASET ----
@@ -29,7 +30,7 @@ less_seven_days <- less_recent_days - 7
 
 # PLOT DATA ----
 
-covid_cases_plot <- ggplot(covid_cases_csv[which(covid_cases_csv$date>"2020-10-31" & covid_cases_csv$date<less_recent_days),], aes(x = date, y = cases_07da)) + 
+covid_cases_plot <- ggplot(covid_cases_csv[which(covid_cases_csv$date>today() - months(12) & covid_cases_csv$date<less_recent_days),], aes(x = date, y = cases_07da)) + 
   geom_point(shape = 1, colour = "red", size=2) +
   geom_smooth(data=subset(covid_cases_csv, covid_cases_csv$date >= less_seven_days), method = "lm", colour = "black", size=0.5, fullrange=FALSE, se=FALSE) +
   labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "))

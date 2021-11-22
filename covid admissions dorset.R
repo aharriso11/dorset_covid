@@ -37,6 +37,8 @@ admissions_data_combined <- merge_recurse(admissions_list)
 # define the date format
 admissions_data_combined$date = as.Date(admissions_data_combined$date, "%Y-%m-%d")
 
+admissions_data_combined <- subset(admissions_data_combined, date > "2021-01-01")
+
 # PLOT DATA ----
 
 # create plot and geom
