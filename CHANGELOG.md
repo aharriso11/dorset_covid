@@ -2,6 +2,21 @@
 
 ## Change log
 
+### Monday 22nd November 2021
+
+#### New products
+- UK cases per million comparison
+- UK vaccinations per million comparison
+
+#### Changes to products
+- Plots updated to use dynamic x axis
+ - England daily cases
+ - Dorset daily cases
+ - Dorset daily admissions
+ 
+#### Changes to web pages
+- New page for UK-international comparison
+
 ### Thursday 11th November 2021
 
 #### New products
