@@ -15,7 +15,7 @@ To see what's changed on these pages visit the [change log](CHANGELOG.md)
 You can see a larger version of each data plot by clicking on it.
 
 ## International comparison
-An international comparison of cases and vaccinations per million between the UK and the European countries experiencing high case rates in autumn 2021 [is available on a separate page](international.md).
+An international comparison of cases and vaccinations per million between the UK and the European countries experiencing high case rates in autumn 2021 [is available on a separate page](international.html).
 
 ## Dorset daily vaccinations
 Booster or third vaccination data are not yet published to local authority level, to see national level data plots that show these [visit the relevant page of the PHE covid dashboard](https://coronavirus.data.gov.uk/details/vaccinations?areaType=nation&areaName=England).
