@@ -10,8 +10,8 @@ These data plots show:
  
 ## Dorset County Hospital
  
-[![Dorset County Hospital](hosp_rbd.png)](hosp_rbd.png?raw=true)
+[![Dorset County Hospital](./output/hosp_rbd.png)](./output/hosp_rbd.png?raw=true)
  
 ## University Hospitals Dorset
  
-[![University Hospitals Dorset](hosp_r0d.png)](hosp_r0d.png?raw=true)
+[![University Hospitals Dorset](./output/hosp_r0d.png)](./output/hosp_r0d.png?raw=true)

@@ -12,8 +12,8 @@ These data plots show comparisons in daily cases and vaccinations per million fo
  
 ## Daily cases per million
  
-[![Daily cases per million](intl_cases.png)](intl_cases.png?raw=true)
+[![Daily cases per million](./output/intl_cases.png)](./output/intl_cases.png?raw=true)
  
-## Daily vaccinations per milliom
+## Daily vaccinations per million
  
-[![Daily vaccinations per milliom](intl_vaccs.png)](intl_vaccs.png?raw=true)
+[![Daily vaccinations per million](./output/intl_vaccs.png)](./output/intl_vaccs.png?raw=true)
