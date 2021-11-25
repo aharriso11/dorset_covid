@@ -18,7 +18,7 @@ You can see a larger version of each data plot by clicking on it.
 An international comparison of cases and vaccinations per million between the UK and the European countries experiencing high case rates in autumn 2021 [is available on a separate page](international.html).
 
 ## Dorset daily vaccinations
-Booster or third vaccination data are not yet published to local authority level, to see national level data plots that show these [visit the relevant page of the PHE covid dashboard](https://coronavirus.data.gov.uk/details/vaccinations?areaType=nation&areaName=England).
+Booster or third vaccination data are not yet published to local authority level, to see national level data plots that show these [visit the relevant page of the UKHSA covid dashboard](https://coronavirus.data.gov.uk/details/vaccinations?areaType=nation&areaName=England).
 [![Dorset daily vaccinations](./output/daily_dorset_vaccinations.png)](./output/daily_dorset_vaccinations.png?raw=true)
 
 ## Dorset daily vaccinations as percentage of population
@@ -52,7 +52,7 @@ A dynamic data plot showing the new cases broken down by age which can also be s
 
 ## Dorset daily lateral flow device tests recorded
 This chart shows the number of lateral flow device tests (both negative and positive) being recorded each day, broken down by local authority. A negative and positive breakdown is not available at local authority level, for more information on testing [visit the relevant page of the UKHSA dashboard](https://coronavirus.data.gov.uk/details/testing)
-[![Dorset daily LFD tests](daily_lfd.png)](./output/daily_lfd.png)
+[![Dorset daily LFD tests](./output/daily_lfd.png)](./output/daily_lfd.png)
 
 ## Dorset daily hospital admissions
 See [NHS trust level data for hospital admissions, bed occupancy and deaths](hospital_activity.MD).

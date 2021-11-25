@@ -2,6 +2,10 @@
 
 ## Change log
 
+### Thursday 25th November 2021
+
+I have rearranged the scripts and image files within the underlying GitHub repository into separate folders as the structure was beginning to get a little chaotic. This will not result in any material difference to the website but will hopefully make browsing the repository a bit easier.
+
 ### Monday 22nd November 2021
 
 #### New products
