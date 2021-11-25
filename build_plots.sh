@@ -7,18 +7,18 @@ commit_string=$(date +%Y_%m_%d_%H%M)
 
 touch "timestamp${commit_string}"
 
-/usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid admissions dorset.R"
-/usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid dorset cases.R"
-/usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid daily cases.R"
-/usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid dorset vaccinations.R"
-/usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid dorset vaccs percentage.R"
-/usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid msoa.R"
-/usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid cases age.R"
-/usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid new lfd tests.R"
-/usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid cases utlas.R"
-/usr/local/bin/rscript "/users/andrewharrison/Documents/R/covid cases sw.R"
-/usr/local/bin/rscript "/users/andrewharrison/Documents/R/intl cases.R"
-/usr/local/bin/rscript "/users/andrewharrison/Documents/R/intl vaccs.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/covid admissions dorset.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/covid dorset cases.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/covid daily cases.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/covid dorset vaccinations.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/covid dorset vaccs percentage.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/covid msoa.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/covid cases age.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/covid new lfd tests.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/covid cases utlas.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/covid cases sw.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/intl cases.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/intl vaccs.R"
 
 vardate="Data plots last updated: "$(date +%Y-%m-%d)
 sed -i '' -e "1s/.*/$vardate/" README.md

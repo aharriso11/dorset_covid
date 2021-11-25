@@ -150,5 +150,5 @@ covid_cases_sw_dynamic_plot <- ggplotly(covid_cases_sw_plot)
 covid_cases_sw_dynamic_plot
 
 # save to daily file
-ggsave("sw_cases.png", width = 16.6, height = 8.65, units = "in")
-htmlwidgets::saveWidget(as_widget(covid_cases_sw_dynamic_plot), "sw_cases.html")
+ggsave("output/sw_cases.png", width = 16.6, height = 8.65, units = "in")
+htmlwidgets::saveWidget(as_widget(covid_cases_sw_dynamic_plot), "output/sw_cases.html")
