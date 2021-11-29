@@ -19,6 +19,7 @@ touch "timestamp${commit_string}"
 /usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/covid cases sw.R"
 /usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/intl cases.R"
 /usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/intl vaccs.R"
+/usr/local/bin/rscript "/users/andrewharrison/Documents/GitHub/dorset_covid/scripts/covid test positivity.R"
 
 vardate="Data plots last updated: "$(date +%Y-%m-%d)
 sed -i '' -e "1s/.*/$vardate/" README.md
