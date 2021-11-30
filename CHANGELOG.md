@@ -2,6 +2,11 @@
 
 ## Change log
 
+### Tuesday 30th December 2021
+
+#### Changes to products
+- England daily cases plot updated to show UKHSA describing metric
+
 ### Monday 29th November 2021
 
 #### New products
