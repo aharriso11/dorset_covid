@@ -49,3 +49,4 @@ mv deaths.csv.8 trustdeaths.csv
 
 # delete the rest
 rm deaths*
+rm COVID*

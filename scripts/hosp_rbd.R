@@ -29,7 +29,7 @@ pacman::p_load(
 font_import(paths = c("~/Documents/GitHub/dorset_covid"), prompt = F)
 extrafont::loadfonts()
 
-source("covid hospital focus.R")
+source("scripts/covid hospital focus.R")
 
 # RBD plot and geoms
 rbd_plot <- ggplot(hosp_combined, aes(x=hdate,y=hnumber)) +
