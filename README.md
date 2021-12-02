@@ -22,7 +22,7 @@ Booster or third vaccination data are not yet published to local authority level
 [![Dorset daily vaccinations](./output/daily_dorset_vaccinations.png)](./output/daily_dorset_vaccinations.png?raw=true)
 
 ## Dorset daily vaccinations as percentage of population
-Booster or third vaccination data are not yet published to local authority level, to see national level data plots that show these [visit the relevant page of the UKHSA covid dashboard](https://coronavirus.data.gov.uk/details/vaccinations?areaType=nation&areaName=England).
+As of 2nd December 2021, booster or third vaccination data are now being published to local authority level and are represented in the data plots below.
 [![Dorset daily vaccinations as percentage of population](./output/daily_dorset_vaccs_percentage.png)](./output/daily_dorset_vaccs_percentage.png?raw=true)
 
 ## England daily cases

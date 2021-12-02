@@ -14,7 +14,9 @@ pacman::p_load(
   dplyr,
   zoo,
   reshape2,
-  lubridate
+  lubridate,
+  ggtext,
+  ggthemes
 )
 
 # IMPORT DATASETS ----
@@ -48,18 +50,21 @@ melt.cases$date = as.Date(melt.cases$date, "%Y-%m-%d")
 # PLOT DATA ----
 
 # create plot and geom
-covid_cases_plot <- ggplot(melt.cases, aes(x = date, y = cases, col = area)) +
-  geom_point(shape = 1, size = 2) + scale_colour_manual(name = "Local authority", values = c("cases_07da_dor" = "green4", "cases_07da_bcp" = "darkmagenta"), labels = c("BCP", "Dorset")) +
-  labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "))
-
-# set plot params
-covid_cases_plot + 
-  scale_y_continuous(trans = 'log10', breaks = c(5,10,20,50,100,200,500), position = "right") +
-  scale_x_date(date_labels = "%B %Y", date_breaks = "1 month") +
-  ggtitle("Dorset covid cases - 7 day average by specimen date (log scale)") +
+covid_cases_plot <- ggplot() +
+  geom_point(data = melt.cases, aes(x = date, y = cases, col = area), shape = 1, size = 2, show.legend = FALSE) + 
+  scale_colour_manual(name = "Local authority", values = c("cases_07da_dor" = "green4", "cases_07da_bcp" = "magenta4"), labels = c("BCP", "Dorset")) +
+  labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "), subtitle = paste0("Daily numbers of new cases (people who have had at least one positive COVID-19 test result) in <span style='color:green4;'>Dorset</span> and <span style='color:magenta4;'>BCP</span>. Data are shown by the date the sample was taken from <br>the person being tested.")) +
+  scale_y_continuous(position = "right") +
+  scale_x_date(date_labels = "%b %y", date_breaks = "1 month") +
+  ggtitle("Dorset covid cases - 7 day average by specimen date (linear scale)") +
   xlab("Date") +
   ylab("Cases") +
-  theme_bw()
+  theme_base() +
+  theme(
+    plot.subtitle = element_markdown(hjust = 0, vjust = 0, size = 12),
+    plot.caption = element_text(size = 11))
+
+covid_cases_plot
 
 # save to daily file
 ggsave("output/daily_dorset_cases.png", width = 16.6, height = 8.65, units = "in")

@@ -53,7 +53,7 @@ covid_cases_plot <- ggplot() +
   xlab("Date") +
   ylab("Cases") +
   # set title, subtitle and caption
-  ggtitle("England covid cases - 7 day average by specimen date") +
+  ggtitle("England covid cases - 7 day average by specimen date (log scale)") +
   labs(caption = paste0("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted ", Sys.time(), sep = " "), subtitle = paste0("Daily numbers of new cases (people who have had at least one positive COVID-19 test result). Data are shown by the date the sample was taken from the person being tested.")) +
   # set theme
   theme_base() +

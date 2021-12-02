@@ -2,6 +2,12 @@
 
 ## Change log
 
+### Thursday 2nd December 2021
+
+#### Changes to products
+- Dorset daily cases plot updated to show UKHSA describing metric, also changed from log to linear scale.
+- Vaccinations plots now show third or booster vaccinations.
+
 ### Tuesday 30th December 2021
 
 #### Changes to products
