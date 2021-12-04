@@ -61,7 +61,7 @@ covid_cases_plot <- ggplot() +
     plot.subtitle = element_markdown(hjust = 0, vjust = 0, size = 12),
     plot.caption = element_text(size = 11))
 
-# crete plot
+# create plot
 covid_cases_plot
 
 # save to daily file
