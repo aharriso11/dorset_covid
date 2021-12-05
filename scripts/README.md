@@ -7,9 +7,9 @@ On this page I will try to provide a brief narrative as to what each script does
 ### Dorset daily vaccinations
 - Source: UKHSA dashboard
 - Metrics
- -- [newPeopleVaccinatedFirstDoseByVaccinationDate](https://coronavirus.data.gov.uk/metrics/doc/newPeopleVaccinatedFirstDoseByVaccinationDate)
- -- [newPeopleVaccinatedSecondDoseByVaccinationDate](https://coronavirus.data.gov.uk/metrics/doc/newPeopleVaccinatedSecondDoseByVaccinationDate)
- -- [newPeopleVaccinatedThirdInjectionByVaccinationDate](https://coronavirus.data.gov.uk/metrics/doc/newPeopleVaccinatedThirdInjectionByVaccinationDate)
+	- [newPeopleVaccinatedFirstDoseByVaccinationDate](https://coronavirus.data.gov.uk/metrics/doc/newPeopleVaccinatedFirstDoseByVaccinationDate)
+	- [newPeopleVaccinatedSecondDoseByVaccinationDate](https://coronavirus.data.gov.uk/metrics/doc/newPeopleVaccinatedSecondDoseByVaccinationDate)
+	- [newPeopleVaccinatedThirdInjectionByVaccinationDate](https://coronavirus.data.gov.uk/metrics/doc/newPeopleVaccinatedThirdInjectionByVaccinationDate)
 - Area type used: ltla
 - Area codes used: E06000059 (Bournemouth, Christchurch and Poole), E06000058 (Dorset)
  
