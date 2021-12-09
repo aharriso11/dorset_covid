@@ -24,7 +24,7 @@ covid_owid_vaccs_csv <- read.csv(url("https://github.com/owid/covid-19-data/raw/
 covid_owid_vaccs_csv$date = as.Date(covid_owid_vaccs_csv$date, "%Y-%m-%d")
 
 owid_countries <- covid_owid_vaccs_csv %>%
-  filter(iso_code=="GBR" | iso_code=="AUT" | iso_code=="NLD" | iso_code=="HUN" | iso_code=="DEU" | iso_code=="BEL")
+  filter(iso_code=="GBR" | iso_code=="AUT" | iso_code=="NLD" | iso_code=="HUN" | iso_code=="DEU" | iso_code=="BEL" | iso_code=="FRA")
 
 owid_vaccs <- subset(owid_countries, date > today() - months(3), select = c("iso_code", "location", "date", "daily_vaccinations_per_million"))
 

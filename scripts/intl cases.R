@@ -25,7 +25,7 @@ covid_owid_csv$date = as.Date(covid_owid_csv$date, "%Y-%m-%d")
 covid_owid_csv$location = as.factor(covid_owid_csv$location)
 
 owid_countries <- covid_owid_csv %>%
-  filter(iso_code=="GBR" | iso_code=="AUT" | iso_code=="NLD" | iso_code=="HUN" | iso_code=="DEU" | iso_code=="BEL")
+  filter(iso_code=="GBR" | iso_code=="AUT" | iso_code=="NLD" | iso_code=="HUN" | iso_code=="DEU" | iso_code=="BEL" | iso_code=="FRA")
 
 owid_cases <- subset(owid_countries, date > today() - months(3), select = c("iso_code", "location", "date", "new_cases_smoothed_per_million"))
 
