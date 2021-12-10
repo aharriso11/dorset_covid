@@ -13,7 +13,8 @@ pacman::p_load(
   ggplot2,
   tidyr,
   reshape,
-  lubridate
+  lubridate,
+  ggtext
 )
 
 # IMPORT DATASETS ----
