@@ -82,4 +82,4 @@ covid_cases_regions_plot <- ggplot() +
 covid_cases_regions_plot
 
 # save to daily file
-ggsave("region_cases.png", width = 16.6, height = 8.65, units = "in")
+ggsave("output/region_cases.png", width = 16.6, height = 8.65, units = "in")
