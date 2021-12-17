@@ -2,6 +2,11 @@
 
 ## Change log
 
+### Friday 17th December 2021
+
+#### New products
+- England regions daily cases
+
 ### Thursday 2nd December 2021
 
 #### Changes to products

@@ -28,6 +28,9 @@ As of 2nd December 2021, booster or third vaccination data are now being publish
 ## England daily cases
 [![England daily cases](./output/daily_england_cases.png)](./output/daily_england_cases.png?raw=true)
 
+## England regions daily cases
+[![Region daily cases](./output/region_cases.png)](./output/region_cases.png?raw=true)
+
 ## Dorset daily cases
 [![Dorset daily cases](./output/daily_dorset_cases.png)](./output/daily_dorset_cases.png?raw=true)
 
