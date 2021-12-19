@@ -18,12 +18,17 @@ You can see a larger version of each data plot by clicking on it.
 An international comparison of cases and vaccinations per million between the UK and the European countries experiencing high case rates in autumn 2021 [is available on a separate page](international.html).
 
 ## Dorset daily vaccinations
-Booster or third vaccination data are not yet published to local authority level, to see national level data plots that show these [visit the relevant page of the UKHSA covid dashboard](https://coronavirus.data.gov.uk/details/vaccinations?areaType=nation&areaName=England).
 [![Dorset daily vaccinations](./output/daily_dorset_vaccinations.png)](./output/daily_dorset_vaccinations.png?raw=true)
 
-## Dorset daily vaccinations as percentage of population
-As of 2nd December 2021, booster or third vaccination data are now being published to local authority level and are represented in the data plots below.
+## Dorset vaccination uptake as percentage of population
+### Local authority level uptake
 [![Dorset daily vaccinations as percentage of population](./output/daily_dorset_vaccs_percentage.png)](./output/daily_dorset_vaccs_percentage.png?raw=true)
+
+### Dorset Council - MSOA (medium super output area) uptake
+[![Dorset daily vaccinations as percentage of population](./output/vaccs_percentage_msoa_dorset.png)](./output/vaccs_percentage_msoa_dorset.png?raw=true)
+
+### BCP Council - MSOA (medium super output area) uptake
+[![Dorset daily vaccinations as percentage of population](./output/vaccs_percentage_msoa_bcp.png)](./output/vaccs_percentage_msoa_bcp.png?raw=true)
 
 ## England daily cases
 [![England daily cases](./output/daily_england_cases.png)](./output/daily_england_cases.png?raw=true)

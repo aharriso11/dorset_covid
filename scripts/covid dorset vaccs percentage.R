@@ -13,13 +13,15 @@ pacman::p_load(
   ggplot2,
   tidyr,
   reshape,
-  ggtext
+  ggtext,
+  data.table
 )
 
 # IMPORT DATASETS ----
 
 vaccs_percentage_dor <- read.csv(url("https://api.coronavirus.data.gov.uk/v2/data?areaType=ltla&areaCode=E06000059&metric=cumVaccinationFirstDoseUptakeByVaccinationDatePercentage&metric=cumVaccinationSecondDoseUptakeByVaccinationDatePercentage&metric=cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage&format=csv"))
 vaccs_percentage_bcp <- read.csv(url("https://api.coronavirus.data.gov.uk/v2/data?areaType=ltla&areaCode=E06000058&metric=cumVaccinationFirstDoseUptakeByVaccinationDatePercentage&metric=cumVaccinationSecondDoseUptakeByVaccinationDatePercentage&metric=cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage&format=csv"))
+vaccs_percentage_eng <- read.csv(url("https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&areaCode=E92000001&metric=cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage&format=csv"))
 
 # MUNGE DATA ----
 
@@ -42,11 +44,21 @@ vaccs_percentage_combined$date = as.Date(vaccs_percentage_combined$date, "%Y-%m-
 # convert wide data into long
 vaccs_percentage_long <- gather(vaccs_percentage_combined, event, total, First:last_col())
 
+# get latest England figure for boosters
+latest_eng <- head(vaccs_percentage_eng$cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage, 1)
+first_date <- tail(vaccs_percentage_long$date, 1)
+
+label_eng_text <- "Dotted line indicates \nEngland third or \nbooster percentage"
+label_eng_colour <- "#00413d"
+plot_label_eng <- data.table(label_eng_x = first_date, label_eng_y = latest_eng, label_eng_text = label_eng_text, label_eng_colour = label_eng_colour)
+
 # PLOT DATA ----
 
 # create plot and geom
 covid_vaccs_percentage_plot <- ggplot() +
   geom_area(data = vaccs_percentage_long, aes(x = date, y = total, group = event, fill = event), position = "dodge") +
+  geom_hline(yintercept = latest_eng, linetype = "dotted", colour = "#00413d", size = 0.5) +
+  geom_label(data = plot_label_eng, aes(x = label_eng_x, y = label_eng_y, label = label_eng_text, group = NULL, hjust = "left"), fill = plot_label_eng$label_eng_colour, colour = "white", fontface = "bold", size = 2.5, nudge_x = 0, nudge_y = 6) +
   scale_fill_manual(name = "Vaccination", values = c("First" = "paleturquoise3", "Second" = "turquoise4", "Third or booster" = "#00413d"), labels = c("First", "Second", "Third or booster")) +
   facet_grid( ~ areaName) +
   scale_x_date(date_labels = "%b %y", date_breaks = "2 months") +

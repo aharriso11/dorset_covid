@@ -2,6 +2,14 @@
 
 ## Change log
 
+### Sunday 19th December 2021
+
+#### New products
+- Vaccination uptake percentage plots shown by MSOA. These are shown as two plots, one for each local authority, to make the data more readable.
+
+#### Changes to products
+- Vaccination uptake percentage plot now shows England percentage figure as a dotted line for comparison purposes
+
 ### Friday 17th December 2021
 
 #### New products
