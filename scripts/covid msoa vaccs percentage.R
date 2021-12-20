@@ -11,9 +11,10 @@ if (!require("pacman")) install.packages("pacman")
 # Use pacman to install (if req) and load required packages
 pacman::p_load(
   ggplot2,
+  tidyr,
   dplyr,
   zoo,
-  reshape2,
+  reshape,
   lubridate,
   plotly,
   data.table,
