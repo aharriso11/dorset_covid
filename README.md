@@ -24,6 +24,9 @@ An international comparison of cases and vaccinations per million between the UK
 ### Local authority level uptake
 [![Dorset daily vaccinations as percentage of population](./output/daily_dorset_vaccs_percentage.png)](./output/daily_dorset_vaccs_percentage.png?raw=true)
 
+### Breakdown by local authority and age group
+[![Dorset daily vaccinations as percentage of population](./output/vaccinations_age.png)](./output/vaccinations_age.png?raw=true)
+
 ### Dorset Council - MSOA (medium super output area) uptake
 [![Dorset daily vaccinations as percentage of population](./output/vaccs_percentage_msoa_dorset.png)](./output/vaccs_percentage_msoa_dorset.png?raw=true)
 

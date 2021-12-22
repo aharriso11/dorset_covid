@@ -2,6 +2,11 @@
 
 ## Change log
 
+### Wednesday 22nd December 2021
+
+#### New products
+- Vaccination uptake percentage broken down by local authority and age group
+
 ### Sunday 19th December 2021
 
 #### New products
