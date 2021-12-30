@@ -1,8 +1,6 @@
-Data plots last updated: 2021-12-28
+Data plots last updated: 2021-12-30
 
 # Andrew's Dorset and BCP covid statistics
-
-> :warning: **No UKHSA reporting for England on Christmas Day or Boxing Day**: The UKHSA dashboard will not update on these days. There may also be days over the next couple of weeks when I don't update this page, but you can always visit [https://coronavirus.data.gov.uk](https://coronavirus.data.gov.uk)
 
 This is the output of me playing around with the [R statistical programming language](https://rafalab.github.io/dsbook/getting-started.html) and the coronavirus data produced on a daily basis by the UK Health Security Agency (UKHSA) and published at [https://coronavirus.data.gov.uk](https://coronavirus.data.gov.uk), focusing on the local authority areas of [Dorset](https://www.dorsetcouncil.gov.uk/) and [Bournemouth, Christchurch and Poole](https://www.bcpcouncil.gov.uk/).
 
