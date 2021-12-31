@@ -27,7 +27,7 @@ covid_owid_csv$location = as.factor(covid_owid_csv$location)
 owid_countries <- covid_owid_csv %>%
   filter(iso_code=="GBR" | iso_code=="AUT" | iso_code=="NLD" | iso_code=="HUN" | iso_code=="DEU" | iso_code=="BEL" | iso_code=="FRA")
 
-owid_cases <- subset(owid_countries, date > today() - months(3), select = c("iso_code", "location", "date", "new_cases_smoothed_per_million"))
+owid_cases <- subset(owid_countries, date > today() - weeks(12), select = c("iso_code", "location", "date", "new_cases_smoothed_per_million"))
 
 plot(owid_cases$date, owid_cases$new_cases_smoothed_per_million, type = "o",
      col = as.factor(owid_cases$iso_code))

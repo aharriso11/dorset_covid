@@ -53,7 +53,7 @@ region_data_sw <- region_data %>%
 covid_cases_sw <- merge(x = covid_cases_ltla, y = region_data_sw, by.x = c("areaCode"), by.y = c("attributes.LAD21CD"))
 
 # restrict data to last nine months and remove columns we don't want
-covid_cases_sw <- subset(covid_cases_sw, date > today() - months(3), select = c("areaCode", "areaName", "date", "newCasesBySpecimenDate"))
+covid_cases_sw <- subset(covid_cases_sw, date > today() - weeks(12), select = c("areaCode", "areaName", "date", "newCasesBySpecimenDate"))
 
 # sort cases by decreasing date
 covid_cases_sw <- covid_cases_sw[rev(order(as.Date(covid_cases_sw$date, format="%Y-%m-%d"))),]

@@ -40,8 +40,8 @@ names(vaccs_combined)[names(vaccs_combined) == "newPeopleVaccinatedThirdInjectio
 # define the date format
 vaccs_combined$date = as.Date(vaccs_combined$date, "%Y-%m-%d")
 
-# restrict to last 9 months
-vaccs_combined <- subset(vaccs_combined, date > today() - months(6))
+# restrict to last 6 months
+vaccs_combined <- subset(vaccs_combined, date > today() - weeks(26))
 
 # convert wide data into long
 vaccs_long <- gather(vaccs_combined, event, total, First:last_col())

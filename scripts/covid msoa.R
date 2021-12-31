@@ -31,7 +31,7 @@ covid_cases_msoa_bcp <- read.csv(url("https://api.coronavirus.data.gov.uk/v2/dat
 covid_cases_msoa_combined <- rbind(covid_cases_msoa_bcp, covid_cases_msoa_dor)
 
 # remove data we don't want
-covid_cases_msoa_combined <- subset(covid_cases_msoa_combined, date > today() - months(1), select = c("UtlaName", "areaName", "date", "newCasesBySpecimenDateRollingRate"))
+covid_cases_msoa_combined <- subset(covid_cases_msoa_combined, date > today() - weeks(4), select = c("UtlaName", "areaName", "date", "newCasesBySpecimenDateRollingRate"))
 
 # define the date format
 covid_cases_msoa_combined$date = as.Date(covid_cases_msoa_combined$date, "%Y-%m-%d")
