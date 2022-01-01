@@ -47,6 +47,9 @@ mobility2020 <- read.csv("devel/2020_GB_Region_Mobility_Report.csv")
 mobility2021 <- read.csv("devel/2021_GB_Region_Mobility_Report.csv")
 
 # manually read in lockdown start and end
+# data from https://www.instituteforgovernment.org.uk/charts/uk-government-coronavirus-lockdowns
+# and https://commonslibrary.parliament.uk/research-briefings/cbp-9068/
+# xmin denotes lockdown start, xmax denotes lockdown end
 lockdowns <- data.frame(
   xmin = c(as.Date(c("2020-03-23")), as.Date(c("2020-11-05")), as.Date(c("2021-01-06"))),
   xmax = c(as.Date(c("2020-07-04")), as.Date(c("2020-12-02")), as.Date(c("2021-03-29"))),
@@ -95,7 +98,7 @@ names(mobility_combined)[names(mobility_combined) == "res_av"] <- "Residential"
 # elongate the data
 mobility_long <- gather(mobility_combined, activity, percent_change_from_baseline, "Retail and recreation":last_col(), na.rm = FALSE, convert = FALSE)
 
-# use the last year's worth of data
+# restrict the dates if we want
 # mobility_long <- subset(mobility_long, date>today() - months(12))
 
 
@@ -107,7 +110,7 @@ mobility_plot <- ggplot() +
   # shaded areas to denote lockdowns
   geom_rect(
     data = lockdowns,
-    fill = "powderblue", alpha = 0.5,
+    fill = "lightsteelblue1", alpha = 0.5,
     aes(
     xmin = xmin,
     xmax = xmax,
@@ -118,15 +121,24 @@ mobility_plot <- ggplot() +
   # grey line to indicate baseline
   geom_hline(yintercept = 0, colour = "black") +
   # main data plot
-  geom_path(data = mobility_long, aes(x = date, y = percent_change_from_baseline), size = 0.75, colour = "dodgerblue4") +
+  geom_area(data = mobility_long, aes(x = date, y = percent_change_from_baseline), size = 0.75, colour = "springgreen4", fill = "#94d3b2", position = "stack") +
+  # text annotations to indicate lockdowns
+  # x value takes the start date from the lockdowns dataframe and adds twelve for positioning
+  annotate("text", x = lockdowns$xmin[1]+12, y = 250, label = "Lockdown 1", size = 2.5, colour = "darkblue", fontface = "bold", angle = 90) +
+  annotate("text", x = lockdowns$xmin[2]+12, y = 250, label = "Lockdown 2", size = 2.5, colour = "darkblue", fontface = "bold", angle = 90) +
+  annotate("text", x = lockdowns$xmin[3]+12, y = 250, label = "Lockdown 3", size = 2.5, colour = "darkblue", fontface = "bold", angle = 90) +
   # facet by activity
   facet_wrap(~ activity) +
+  # set scales
   scale_x_date(date_labels = "%b %y", date_breaks = "3 months") +
   scale_y_continuous(breaks = c(-50, 0, 50, 100, 150, 200, 250, 300)) +
+  # set axis labels
   xlab("Date") +
   ylab("Percentage change") +
+  # set title and subtitle
   ggtitle("We're moving around in Dorset differently due to covid-19") +
   labs(caption = paste("Data from Google community mobility reports / https://www.google.com/covid19/mobility. Lockdown dates from the Insitute for Government. Plotted", Sys.time(), sep = " "), subtitle = "How visits and lengths of stay at different places change compared to a pre-covid baseline (3rd Jan - 6th Feb 2020), calculated from Google account users who have opted in to location history features.<br>Shaded light blue areas indicate periods of national restrictions.") +
+  # set theme and customisations
   theme_base() +
   theme(
     axis.text.x = element_text(size = 8),
@@ -141,7 +153,8 @@ mobility_plot <- ggplot() +
     axis.text = element_text(size = 8),
     strip.text.y = element_text(size = 9.5))
 
+# run the plot
 mobility_plot
 
-# save to daily file
+# save to file
 ggsave("output/mobility.png", width = 16.6, height = 8.65, units = "in")
