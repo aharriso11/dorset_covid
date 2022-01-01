@@ -143,6 +143,7 @@ unvaxxed_plot <- ggplot(data = subset(vaccs_percentage_long, event == "First")) 
     axis.title = element_text(size = 12),
     axis.text = element_text(size = 10))
 
+# create plot
 unvaxxed_plot
 
 # save to daily file

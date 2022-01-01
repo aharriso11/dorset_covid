@@ -40,31 +40,32 @@ pacman::p_load(
 GET(sheet_path, write_disk(file_name, overwrite = TRUE))
 
 # Import raw data from Excel
-covid_variant_data <- read_ods(file_name, sheet = "Fig2", skip = 2) 
+covid_variant_data <- read_ods(file_name, sheet = "Fig8B", skip = 2) 
 
 # MUNGE DATA ----
 
 # set the date format
-covid_variant_data$week = as.Date(covid_variant_data$week, "%m/%d/%Y")
+covid_variant_data$spec.date = as.Date(covid_variant_data$spec.date, "%m/%d/%Y")
 
 # convert wide data to long
-covid_variant_data <- gather(covid_variant_data, variant, case_prevelance, "Omicron":last_col())
+# covid_variant_data <- gather(covid_variant_data, variant, case_prevelance, "Omicron":last_col())
 
 # PLOT DATA ----
 
 # create plot and geom
 covid_variant_plot <- ggplot() +
-  # plot data in a stacked format
-  geom_area(data = covid_variant_data, aes(x = week, y = case_prevelance, group = variant, fill = variant), position = "stack") +
+  # plot data 
+  geom_line(data = covid_variant_data, aes(x = spec.date, y = count_age, group = age.group, colour = age.group)) +
+  facet_wrap( ~ variant) +
   # scale settings
-  scale_fill_manual(name = "Variant", values = as.vector(tableau20(19))) +
-  scale_x_date(date_labels = "%b %y", date_breaks = "1 month") +
+  scale_colour_manual(name = "Age group", values = as.vector(tableau20(19))) +
+  scale_x_date(date_labels = "%d %b", date_breaks = "1 week") +
   # axis settings
-  xlab("Month") +
-  ylab("Case prevelance percentage") +
+  xlab("Date") +
+  ylab("Number of sequenced and genotyped cases") +
   # titles
-  ggtitle("Covid variant prevalence in England") +
-  labs(caption = paste0(plot_caption," Plotted", Sys.time(), sep = " "), subtitle = paste0(plot_subtitle)) +
+  ggtitle("Comparison of sequenced and genotyped Delta (VOC-21APR-02) and Omicron (VOC-21NOV-01) case rate") +
+  labs(caption = paste0(plot_caption," Plotted ", Sys.time(), sep = " "), subtitle = paste0(plot_subtitle)) +
   # set theme
   theme_base() +
   theme(
