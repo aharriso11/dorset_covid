@@ -14,8 +14,15 @@ To see what's changed on these pages visit the [change log](CHANGELOG.md)
 
 You can see a larger version of each data plot by clicking on it.
 
+# International and insights
+
+## Other insights
+A selection of other data insights, usually updated on an irregular basis, [can be seen on a separate page](insights.html). Other insights currently include data plots of covid variant prevalence in England, vaccination uptake by age for Dorset, and mobility data from Google for Dorset.
+
 ## International comparison
-An international comparison of cases and vaccinations per million between the UK and the European countries experiencing high case rates in autumn 2021 [is available on a separate page](international.html).
+An international comparison of cases and vaccinations per million between the UK and some other countries [is available on a separate page](international.html).
+
+# Vaccinations
 
 ## Dorset daily vaccinations
 [![Dorset daily vaccinations](./output/daily_dorset_vaccinations.png)](./output/daily_dorset_vaccinations.png?raw=true)
@@ -33,6 +40,8 @@ An international comparison of cases and vaccinations per million between the UK
 ### BCP Council - MSOA (medium super output area) uptake
 [![Dorset daily vaccinations as percentage of population](./output/vaccs_percentage_msoa_bcp.png)](./output/vaccs_percentage_msoa_bcp.png?raw=true)
 
+# Cases
+
 ## England daily cases
 [![England daily cases](./output/daily_england_cases.png)](./output/daily_england_cases.png?raw=true)
 
@@ -45,10 +54,6 @@ An international comparison of cases and vaccinations per million between the UK
 ## Dorset daily case comparison with other upper tier local authorities
 This chart also shows the top five upper tier local authorities
 [![Dorset daily case comparison](./output/daily_cases_utlas.png)](./output/daily_cases_utlas.png?raw=true)
-
-## Dorset test positivity comparison with other upper tier local authorities
-The metric description of this chart comes from the [newly published metrics documentation](https://coronavirus.data.gov.uk/metrics/doc/uniqueCasePositivityBySpecimenDateRollingSum) on the UKHSA dashboard.
-[![Dorset case positivity comparison](./output/daily_test_positivity.png)](./output/daily_test_positivity.png?raw=true)
 
 ## Dorset daily case comparison with south west lower tier local authorities
 This chart also highlights LTLAs most affected by the recent [Immensa PCR testing failure](https://www.standard.co.uk/news/uk/exeter-government-taunton-somerset-nhs-england-b961477.html) in red and is presented on this page as a dynamic data plot. You can also view the dynamic data plot [at full size on a separate page](./output/sw_cases.html), or view a [static version](./output/sw_cases.png?raw=true).
@@ -65,9 +70,17 @@ A dynamic data plot showing the new cases broken down by age which can also be s
 ### New cases by age distribution
 [![New cases by age distribution](./output/dorset_age_cases_percentage.png)](./output/dorset_age_cases_percentage.png?raw=true)
 
+# Testing
+
+## Dorset test positivity comparison with other upper tier local authorities
+The metric description of this chart comes from the [newly published metrics documentation](https://coronavirus.data.gov.uk/metrics/doc/uniqueCasePositivityBySpecimenDateRollingSum) on the UKHSA dashboard.
+[![Dorset case positivity comparison](./output/daily_test_positivity.png)](./output/daily_test_positivity.png?raw=true)
+
 ## Dorset daily lateral flow device tests recorded
 This chart shows the number of lateral flow device tests (both negative and positive) being recorded each day, broken down by local authority. A negative and positive breakdown is not available at local authority level, for more information on testing [visit the relevant page of the UKHSA dashboard](https://coronavirus.data.gov.uk/details/testing)
 [![Dorset daily LFD tests](./output/daily_lfd.png)](./output/daily_lfd.png)
+
+# Hospital activity
 
 ## Dorset daily hospital admissions
 See [NHS trust level data for hospital admissions, bed occupancy and deaths](hospital_activity.MD).

@@ -137,7 +137,7 @@ mobility_plot <- ggplot() +
   ylab("Percentage change") +
   # set title and subtitle
   ggtitle("We're moving around in Dorset differently due to covid-19") +
-  labs(caption = paste("Data from Google community mobility reports / https://www.google.com/covid19/mobility. Lockdown dates from the Insitute for Government. Plotted", Sys.time(), sep = " "), subtitle = "How visits and lengths of stay at different places change compared to a pre-covid baseline (3rd Jan - 6th Feb 2020), calculated from Google account users who have opted in to location history features.<br>Shaded light blue areas indicate periods of national restrictions.") +
+  labs(caption = paste("Data from Google community mobility reports / https://www.google.com/covid19/mobility. Lockdown dates from the Insitute for Government. Plotted", Sys.time(), sep = " ", "\nData plot by Andrew Harrison / https://aharriso11.github.io/dorset_covid"), subtitle = "How visits and lengths of stay at different places change compared to a pre-covid baseline (3rd Jan - 6th Feb 2020), calculated from Google account users who have opted in to location history features.<br>Shaded light blue areas indicate periods of national restrictions.") +
   # set theme and customisations
   theme_base() +
   theme(
@@ -145,7 +145,7 @@ mobility_plot <- ggplot() +
     axis.text.y = element_text(size = 8),
     plot.title = element_text(size = 20, family = "Helvetica", face = "bold"),
     plot.subtitle = element_markdown(hjust = 0, vjust = 0, size = 11),
-    plot.caption = element_text(size = 10),
+    plot.caption = element_text(size = 8),
     legend.text = element_text(size = 12),
     legend.background = element_blank(),
     legend.box.background = element_rect(colour = "black"),
