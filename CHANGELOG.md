@@ -2,6 +2,16 @@
 
 ## Change log
 
+### Sunday 2nd January 2021
+
+#### New products
+- Unvaccinated population compared with social deprivation in an area
+- Covid variant prevalence for England
+- Google mobility data for Dorset
+
+#### Changes to web pages
+New page - [insights](insights.html)
+
 ### Wednesday 22nd December 2021
 
 #### New products
