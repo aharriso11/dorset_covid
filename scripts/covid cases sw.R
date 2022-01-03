@@ -19,12 +19,8 @@ pacman::p_load(
   data.table,
   rjson,
   ggthemes,
-  extrafont
+  ggtext
 )
-
-# install fonts
-font_import(paths = c("~/Documents/GitHub/dorset_covid"), prompt = F)
-extrafont::loadfonts()
 
 # IMPORT DATASETS ----
 
@@ -113,8 +109,8 @@ plot_labels_right <- data.table(labels_right_x = labels_right_x, labels_right_y 
 covid_cases_sw_plot <- ggplot() +
   # background data
   geom_line(data = covid_cases_sw, aes(x = date, y = sw_cases_07da, group = areaName, colour = areaName), colour = "lightblue3") +
-  # Immensa lines
-  geom_line(data = subset_immensa, aes(x = date, y = sw_cases_07da, group = areaName, colour = areaName), colour = "red3") +
+  # Immensa lines (commented out as no longer relevant)
+  # geom_line(data = subset_immensa, aes(x = date, y = sw_cases_07da, group = areaName, colour = areaName), colour = "red3") +
   # Dorset line
   geom_line(data = subset_dor, aes(x = date, y = sw_cases_07da, group = areaName, colour = areaName), colour = "green4", size = 1) +
   # BCP line
@@ -130,15 +126,21 @@ covid_cases_sw_plot <- ggplot() +
   # geom_text(data = subset_top5, aes(x = date, y = sw_cases_07da, label = areaName, group = NULL, hjust = "left"), colour = "lightblue3", fontface = "bold", family = "OfficinaSanITC-Book", size = 2.5, nudge_x = 1, angle = 45) +
   # set title
   ggtitle("New covid cases - Dorset comparison with south west lower tier local authorities") +
-  labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ")) +
+  labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " ", "\nData plot by Andrew Harrison / https://aharriso11.github.io/dorset_covid")) +
   # set theme
-  theme_economist(base_family="Officina Sans ITC Book") +
-  theme(axis.line.x = element_line(size=.5, colour = "black"),
-        legend.position="bottom", 
-        legend.direction="horizontal", 
-        legend.title = element_blank(),
-        plot.title=element_text(family="Officina Sans ITC Book"),
-        text=element_text(family="Officina Sans ITC Book"))
+  theme_base() +
+  theme(
+    axis.text.x = element_text(size = 8),
+    axis.text.y = element_text(size = 8),
+    plot.title = element_text(size = 20, family = "Helvetica", face = "bold"),
+    plot.subtitle = element_markdown(hjust = 0, vjust = 0, size = 11),
+    plot.caption = element_text(size = 8),
+    legend.text = element_text(size = 12),
+    legend.background = element_blank(),
+    legend.box.background = element_rect(colour = "black"),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 8),
+    strip.text.y = element_text(size = 9.5))
 
 covid_cases_sw_plot
 
