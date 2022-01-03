@@ -2,6 +2,12 @@
 
 ## Change log
 
+### Monday 3rd January 2022
+
+#### Changes to products
+- Removed "Economist theme" from UTLA and SW comparison plots due to font errors not worth fixing
+- Removed Immensa red lines from SW comparison plot as this is no longer particularly relevant.
+
 ### Sunday 2nd January 2021
 
 #### New products
