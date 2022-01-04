@@ -4,8 +4,11 @@
 
 ### Tuesday 4th January 2022
 
-### New products
+#### New products
 - Dorset daily cases change
+
+#### Changes to products
+- Resolved a long running issue with the hospital activity data plots which should now update reliably on a roughly weekly basis.
 
 ### Monday 3rd January 2022
 
