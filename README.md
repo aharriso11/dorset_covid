@@ -51,6 +51,9 @@ An international comparison of cases and vaccinations per million between the UK
 ## Dorset daily cases
 [![Dorset daily cases](./output/daily_dorset_cases.png)](./output/daily_dorset_cases.png?raw=true)
 
+## Daily change in Dorset cases by specimen date
+[![Dorset daily cases change](./output/dorset_cases_change.png)](./output/dorset_cases_change.png?raw=true)
+
 ## Dorset daily case comparison with other upper tier local authorities
 This chart also shows the top five upper tier local authorities
 [![Dorset daily case comparison](./output/daily_cases_utlas.png)](./output/daily_cases_utlas.png?raw=true)

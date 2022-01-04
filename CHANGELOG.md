@@ -2,6 +2,11 @@
 
 ## Change log
 
+### Tuesday 4th January 2022
+
+### New products
+- Dorset daily cases change
+
 ### Monday 3rd January 2022
 
 #### Changes to products
@@ -16,7 +21,8 @@
 - Google mobility data for Dorset
 
 #### Changes to web pages
-New page - [insights](insights.html)
+- New page - [insights](insights.html)
+- Rearranged main page with new headings
 
 ### Wednesday 22nd December 2021
 
