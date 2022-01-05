@@ -117,7 +117,7 @@ df_combined <- merge_recurse(df_list)
 df_combined$date = as.Date(df_combined$date, "%Y-%m-%d")
 
 # convert wide data into long
-df_long <- gather(df_combined, event, total, covidOccupiedMVBeds:last_col())
+df_long <- gather(df_combined, event, total, hospitalCases:last_col())
 
 # restrict to twelve weeks
 df_long <- subset(df_long, date > today() - weeks(12))
