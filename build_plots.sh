@@ -29,10 +29,13 @@ touch "timestamp${commit_string}"
 vardate="Data plots last updated: "$(date +%Y-%m-%d)
 sed -i '' -e "1s/.*/$vardate/" README.md
 
+vardate="Data plots last updated: "$(date +%Y-%m-%d)
+sed -i '' -e "1s/.*/$vardate/" ./pages/README.md
+
 cd /users/andrewharrison/Documents/Github/dorset_covid
 
 echo "push_${commit_string}"
 
-# git add .
-# git commit -am "push_${commit_string}"
-# git push
+git add .
+git commit -am "push_${commit_string}"
+git push
