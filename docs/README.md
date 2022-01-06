@@ -29,63 +29,63 @@ An international comparison of cases and vaccinations per million between the UK
 # Vaccinations
 
 ## Dorset daily vaccinations
-[![Dorset daily vaccinations](../output/daily_dorset_vaccinations.png)](../output/daily_dorset_vaccinations.png?raw=true)
+[![Dorset daily vaccinations](./output//daily_dorset_vaccinations.png)](./output//daily_dorset_vaccinations.png?raw=true)
 
 ## Dorset vaccination uptake as percentage of population
 ### Local authority level uptake
-[![Dorset daily vaccinations as percentage of population](../output/daily_dorset_vaccs_percentage.png)](../output/daily_dorset_vaccs_percentage.png?raw=true)
+[![Dorset daily vaccinations as percentage of population](./output//daily_dorset_vaccs_percentage.png)](./output//daily_dorset_vaccs_percentage.png?raw=true)
 
 ### Breakdown by local authority and age group
-[![Dorset daily vaccinations as percentage of population](../output/vaccinations_age.png)](../output/vaccinations_age.png?raw=true)
+[![Dorset daily vaccinations as percentage of population](./output//vaccinations_age.png)](./output//vaccinations_age.png?raw=true)
 
 ### Dorset Council - MSOA (medium super output area) uptake
-[![Dorset daily vaccinations as percentage of population](../output/vaccs_percentage_msoa_dorset.png)](../output/vaccs_percentage_msoa_dorset.png?raw=true)
+[![Dorset daily vaccinations as percentage of population](./output//vaccs_percentage_msoa_dorset.png)](./output//vaccs_percentage_msoa_dorset.png?raw=true)
 
 ### BCP Council - MSOA (medium super output area) uptake
-[![Dorset daily vaccinations as percentage of population](../output/vaccs_percentage_msoa_bcp.png)](../output/vaccs_percentage_msoa_bcp.png?raw=true)
+[![Dorset daily vaccinations as percentage of population](./output//vaccs_percentage_msoa_bcp.png)](./output//vaccs_percentage_msoa_bcp.png?raw=true)
 
 # Cases
 
 ## England daily cases
-[![England daily cases](../output/daily_england_cases.png)](../output/daily_england_cases.png?raw=true)
+[![England daily cases](./output//daily_england_cases.png)](./output//daily_england_cases.png?raw=true)
 
 ## England regions daily cases
-[![Region daily cases](../output/region_cases.png)](../output/region_cases.png?raw=true)
+[![Region daily cases](./output//region_cases.png)](./output//region_cases.png?raw=true)
 
 ## Dorset daily cases
-[![Dorset daily cases](../output/daily_dorset_cases.png)](../output/daily_dorset_cases.png?raw=true)
+[![Dorset daily cases](./output//daily_dorset_cases.png)](./output//daily_dorset_cases.png?raw=true)
 
 ## Daily change in Dorset cases by specimen date
-[![Dorset daily cases change](../output/dorset_cases_change.png)](../output/dorset_cases_change.png?raw=true)
+[![Dorset daily cases change](./output//dorset_cases_change.png)](./output//dorset_cases_change.png?raw=true)
 
 ## Dorset daily case comparison with other upper tier local authorities
 This chart also shows the top five upper tier local authorities
-[![Dorset daily case comparison](../output/daily_cases_utlas.png)](../output/daily_cases_utlas.png?raw=true)
+[![Dorset daily case comparison](./output//daily_cases_utlas.png)](./output//daily_cases_utlas.png?raw=true)
 
 ## Dorset daily case comparison with south west lower tier local authorities
-This chart is presented on this page as a dynamic data plot. You can also view the dynamic data plot [at full size on a separate page](../output/sw_cases.html), or view a [static version](../output/sw_cases.png?raw=true).
-<iframe src="../output/sw_cases.html" title="South west case focus" width=1000 height=700></iframe>
+This chart is presented on this page as a dynamic data plot. You can also view the dynamic data plot [at full size on a separate page](./output//sw_cases.html), or view a [static version](./output//sw_cases.png?raw=true).
+<iframe src="./output//sw_cases.html" title="South west case focus" width=1000 height=700></iframe>
 
 ## Dorset MSOA rolling rates
-A dynamic data plot showing the MSOA rolling rates which can also be seen [at full size on a separate web page](../output/msoa_cases.html).
-<iframe src="../output/msoa_cases.html" title="MSOA case focus" width=1000 height=700></iframe>
+A dynamic data plot showing the MSOA rolling rates which can also be seen [at full size on a separate web page](./output//msoa_cases.html).
+<iframe src="./output//msoa_cases.html" title="MSOA case focus" width=1000 height=700></iframe>
 
 ## Dorset new cases by age
-A dynamic data plot showing the new cases broken down by age which can also be seen [at full size on a separate web page](../output/age_cases.html).
-<iframe src="../output/age_cases.html" title="Age case focus" width=1000 height=700></iframe>
+A dynamic data plot showing the new cases broken down by age which can also be seen [at full size on a separate web page](./output//age_cases.html).
+<iframe src="./output//age_cases.html" title="Age case focus" width=1000 height=700></iframe>
 
 ### New cases by age distribution
-[![New cases by age distribution](../output/dorset_age_cases_percentage.png)](../output/dorset_age_cases_percentage.png?raw=true)
+[![New cases by age distribution](./output//dorset_age_cases_percentage.png)](./output//dorset_age_cases_percentage.png?raw=true)
 
 # Testing
 
 ## Dorset test positivity comparison with other upper tier local authorities
 The metric description of this chart comes from the [newly published metrics documentation](https://coronavirus.data.gov.uk/metrics/doc/uniqueCasePositivityBySpecimenDateRollingSum) on the UKHSA dashboard.
-[![Dorset case positivity comparison](../output/daily_test_positivity.png)](../output/daily_test_positivity.png?raw=true)
+[![Dorset case positivity comparison](./output//daily_test_positivity.png)](./output//daily_test_positivity.png?raw=true)
 
 ## Dorset daily lateral flow device tests recorded
 This chart shows the number of lateral flow device tests (both negative and positive) being recorded each day, broken down by local authority. A negative and positive breakdown is not available at local authority level, for more information on testing [visit the relevant page of the UKHSA dashboard](https://coronavirus.data.gov.uk/details/testing)
-[![Dorset daily LFD tests](./output/daily_lfd.png)](../output/daily_lfd.png)
+[![Dorset daily LFD tests](./output/daily_lfd.png)](./output//daily_lfd.png)
 
 # Hospital activity
 
@@ -93,7 +93,7 @@ This chart shows the number of lateral flow device tests (both negative and posi
 See [NHS trust level data for hospital admissions, bed occupancy and deaths](hospital_activity.MD).
 
 The [NHS England website](https://www.england.nhs.uk/statistics/statistical-work-areas/covid-19-hospital-activity/) provides much greater detail on hospital admissions than either this website or the UKHSA dashboard. 
-[![Dorset daily admissions](../output/daily_dorset_admissions.png)](../output/daily_dorset_admissions.png?raw=true)
+[![Dorset daily admissions](./output//daily_dorset_admissions.png)](./output//daily_dorset_admissions.png?raw=true)
 
 ---
 
