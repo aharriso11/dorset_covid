@@ -29,38 +29,38 @@ An international comparison of cases and vaccinations per million between the UK
 # Vaccinations
 
 ## Dorset daily vaccinations
-[![Dorset daily vaccinations](./output/daily_dorset_vaccinations.png)](../output/daily_dorset_vaccinations.png?raw=true)
+[![Dorset daily vaccinations](../output/daily_dorset_vaccinations.png)](../output/daily_dorset_vaccinations.png?raw=true)
 
 ## Dorset vaccination uptake as percentage of population
 ### Local authority level uptake
-[![Dorset daily vaccinations as percentage of population](./output/daily_dorset_vaccs_percentage.png)](../output/daily_dorset_vaccs_percentage.png?raw=true)
+[![Dorset daily vaccinations as percentage of population](../output/daily_dorset_vaccs_percentage.png)](../output/daily_dorset_vaccs_percentage.png?raw=true)
 
 ### Breakdown by local authority and age group
-[![Dorset daily vaccinations as percentage of population](./output/vaccinations_age.png)](../output/vaccinations_age.png?raw=true)
+[![Dorset daily vaccinations as percentage of population](../output/vaccinations_age.png)](../output/vaccinations_age.png?raw=true)
 
 ### Dorset Council - MSOA (medium super output area) uptake
-[![Dorset daily vaccinations as percentage of population](./output/vaccs_percentage_msoa_dorset.png)](../output/vaccs_percentage_msoa_dorset.png?raw=true)
+[![Dorset daily vaccinations as percentage of population](../output/vaccs_percentage_msoa_dorset.png)](../output/vaccs_percentage_msoa_dorset.png?raw=true)
 
 ### BCP Council - MSOA (medium super output area) uptake
-[![Dorset daily vaccinations as percentage of population](./output/vaccs_percentage_msoa_bcp.png)](../output/vaccs_percentage_msoa_bcp.png?raw=true)
+[![Dorset daily vaccinations as percentage of population](../output/vaccs_percentage_msoa_bcp.png)](../output/vaccs_percentage_msoa_bcp.png?raw=true)
 
 # Cases
 
 ## England daily cases
-[![England daily cases](./output/daily_england_cases.png)](../output/daily_england_cases.png?raw=true)
+[![England daily cases](../output/daily_england_cases.png)](../output/daily_england_cases.png?raw=true)
 
 ## England regions daily cases
-[![Region daily cases](./output/region_cases.png)](../output/region_cases.png?raw=true)
+[![Region daily cases](../output/region_cases.png)](../output/region_cases.png?raw=true)
 
 ## Dorset daily cases
-[![Dorset daily cases](./output/daily_dorset_cases.png)](../output/daily_dorset_cases.png?raw=true)
+[![Dorset daily cases](../output/daily_dorset_cases.png)](../output/daily_dorset_cases.png?raw=true)
 
 ## Daily change in Dorset cases by specimen date
-[![Dorset daily cases change](./output/dorset_cases_change.png)](../output/dorset_cases_change.png?raw=true)
+[![Dorset daily cases change](../output/dorset_cases_change.png)](../output/dorset_cases_change.png?raw=true)
 
 ## Dorset daily case comparison with other upper tier local authorities
 This chart also shows the top five upper tier local authorities
-[![Dorset daily case comparison](./output/daily_cases_utlas.png)](../output/daily_cases_utlas.png?raw=true)
+[![Dorset daily case comparison](../output/daily_cases_utlas.png)](../output/daily_cases_utlas.png?raw=true)
 
 ## Dorset daily case comparison with south west lower tier local authorities
 This chart is presented on this page as a dynamic data plot. You can also view the dynamic data plot [at full size on a separate page](../output/sw_cases.html), or view a [static version](../output/sw_cases.png?raw=true).
