@@ -30,7 +30,7 @@ vardate="Data plots last updated: "$(date +%Y-%m-%d)
 sed -i '' -e "1s/.*/$vardate/" README.md
 
 vardate="Data plots last updated: "$(date +%Y-%m-%d)
-sed -i '' -e "1s/.*/$vardate/" ./pages/README.md
+sed -i '' -e "1s/.*/$vardate/" ./docs/README.md
 
 cd /users/andrewharrison/Documents/Github/dorset_covid
 
