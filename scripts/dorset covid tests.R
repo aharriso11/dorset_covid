@@ -81,7 +81,7 @@ names(df_combined)[names(df_combined) == "newLFDTestsBySpecimenDate"] <- "Latera
 names(df_combined)[names(df_combined) == "newPCRTestsBySpecimenDate"] <- "PCR tests"
 
 # convert wide data into long
-df_long <- gather(df_combined, event, total, "Lateral flow tests":last_col())
+df_long <- gather(df_combined, event, total, -c(areaCode, areaType, areaName, date))
 
 # filter to the last two weeks
 df_long <- subset(df_long, date > today() - months(2))
