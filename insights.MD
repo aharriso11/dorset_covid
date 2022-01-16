@@ -21,13 +21,13 @@ Google publish country level summaries of this data on their website but make mo
 [View the underlying code that produces this plot](https://github.com/aharriso11/dorset_covid/blob/main/scripts/google%20mobility.R)
 
 ## Covid variant prevalence
-This data set is made available by the [UK Health Security Agency](https://www.gov.uk/government/organisations/uk-health-security-agency) as part of their [covid technical briefings](https://www.gov.uk/government/publications/investigation-of-sars-cov-2-variants-technical-briefings). These briefings are released fairly frequently but on an irregular basis. The most recent briefing (number 33) was released on 23rd December 2021 and provides information on cases sequenced between 31st January and 21st December.
+This data set is made available by the [UK Health Security Agency](https://www.gov.uk/government/organisations/uk-health-security-agency) as part of their [covid technical briefings](https://www.gov.uk/government/publications/investigation-of-sars-cov-2-variants-technical-briefings). These briefings are released fairly frequently but on an irregular basis. The most recent briefing (number 34) was released on 14th January 2022 and provides information on cases sequenced between 31st January 2021 and 10th January 2022.
 
 The variant prevalence data set shows the overwhelming prevalence of the Alpha "Kent" variant throughout the winter and into spring, whereupon it is quickly edged out by the Delta variant through May and June. The Omicron variant appears in late November and quickly begins to edge out the Delta variant.
 
 [![Variant data](./output/england_variants.png)](./output/england_variants.png?raw=true)
 
-[View the underlying code that produces this plot](https://github.com/aharriso11/dorset_covid/blob/main/scripts/Variant%20prevalence/covid%20d%20o%20age%2033.R)
+[View the underlying code that produces this plot](https://github.com/aharriso11/dorset_covid/blob/main/scripts/Variant%20prevalence/covid%20d%20o%20age%2034.R)
 
 ## A comparison of covid vaccination status with deprivation
 This data plot combines two data sets: the percentage of people who have not yet received  a first covid vaccination, plotted against the [index of multiple deprivations](https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019) score in their area. The data plot shows:

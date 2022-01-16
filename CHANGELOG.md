@@ -2,6 +2,12 @@
 
 ## Change log
 
+### Sunday 16th January 2022
+
+#### New products
+- Dorset covid testing
+- Hospital activity phase portrait
+
 ### Tuesday 4th January 2022
 
 #### New products

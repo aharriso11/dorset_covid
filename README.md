@@ -79,11 +79,15 @@ A dynamic data plot showing the new cases broken down by age which can also be s
 The metric description of this chart comes from the [newly published metrics documentation](https://coronavirus.data.gov.uk/metrics/doc/uniqueCasePositivityBySpecimenDateRollingSum) on the UKHSA dashboard.
 [![Dorset case positivity comparison](./output/daily_test_positivity.png)](./output/daily_test_positivity.png?raw=true)
 
-## Dorset daily lateral flow device tests recorded
-This chart shows the number of lateral flow device tests (both negative and positive) being recorded each day, broken down by local authority. A negative and positive breakdown is not available at local authority level, for more information on testing [visit the relevant page of the UKHSA dashboard](https://coronavirus.data.gov.uk/details/testing)
-[![Dorset daily LFD tests](./output/daily_lfd.png)](./output/daily_lfd.png)
+## Dorset daily covid tests recorded
+This chart shows the number of PCR and lateral flow device tests (both negative and positive) being recorded each day, broken down by local authority. A negative and positive breakdown is not available at local authority level, for more information on testing [visit the relevant page of the UKHSA dashboard](https://coronavirus.data.gov.uk/details/testing)
+[![Dorset daily tests](./output/dorset_testing.png)](./output/dorset_testing.png?raw=true)
 
 # Hospital activity
+
+## Hospital activity phase portrait
+This chart compares new covid-19 admissions with the number of cases in hospital.
+[![Hospital phase portrait](./output/hosp_phase.png)](./output/hosp_phase.png?raw=true)
 
 ## Dorset daily hospital admissions
 See [NHS trust level data for hospital admissions, bed occupancy and deaths](hospital_activity.MD).
