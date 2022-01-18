@@ -38,13 +38,14 @@ file_name <- "devel/Region_Mobility_Report_CSVs.zip"
 GET(zip_path, write_disk(file_name, overwrite = TRUE))
 
 # extract the GB data for 2021
-unzip(file_name, files = c("2021_GB_Region_Mobility_Report.csv", "2020_GB_Region_Mobility_Report.csv"), overwrite = TRUE, exdir = "./devel/")
+unzip(file_name, files = c("2022_GB_Region_Mobility_Report.csv", "2021_GB_Region_Mobility_Report.csv", "2020_GB_Region_Mobility_Report.csv"), overwrite = TRUE, exdir = "./devel/")
 
 # IMPORT DATA ----
 
 # import GB data files
 mobility2020 <- read.csv("devel/2020_GB_Region_Mobility_Report.csv")
 mobility2021 <- read.csv("devel/2021_GB_Region_Mobility_Report.csv")
+mobility2022 <- read.csv("devel/2022_GB_Region_Mobility_Report.csv")
 
 # manually read in lockdown start and end
 # data from https://www.instituteforgovernment.org.uk/charts/uk-government-coronavirus-lockdowns
@@ -61,7 +62,7 @@ lockdowns <- data.frame(
   
 # merge datasets into one
 # 1 - place datasets into a single list
-mobility_list <- list(mobility2020, mobility2021)
+mobility_list <- list(mobility2020, mobility2021, mobility2022)
 
 # 2 - merge the datasets in the list into vaccs_combined
 mobility_combined <- merge_recurse(mobility_list)
@@ -71,7 +72,6 @@ mobility_combined$date = as.Date(mobility_combined$date, "%Y-%m-%d")
 
 # filter only the Dorset data
 mobility_combined <- mobility_combined %>%
-#  filter(sub_region_2 == "Bournemouth, Christchurch and Poole" | sub_region_2 == "Dorset")
   filter(sub_region_1 == "Dorset" & sub_region_2 == "")
 
 # calculate seven day rolling average

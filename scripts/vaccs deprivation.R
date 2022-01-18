@@ -129,7 +129,8 @@ unvaxxed_plot <- ggplot(data = subset(vaccs_percentage_long, event == "First")) 
   ylab("Unvaccinated percentage") +
   # title and subtitle
   ggtitle("Comparing covid vaccination status with deprivation") +
-  labs(caption = paste("Data from UK Health Security Agency and DLUHC / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "), subtitle = "Percentage of people aged 12 and over in a MSOA that have not yet received a first covid vaccination, plotted against the MSOA's deprivation score.") +
+  labs(caption = paste("Data from UK Health Security Agency and DLUHC / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "), 
+       subtitle = "Percentage of people aged 12 and over in a MSOA that have not yet received a first covid vaccination, plotted against the MSOA's deprivation score.") +
   # theme and theme settings
   theme_base() +
   theme(
