@@ -47,11 +47,23 @@ melt.cases <- melt(covid_cases_com, id=c("date"), variable.name = "area", value.
 # define the date format
 melt.cases$date = as.Date(melt.cases$date, "%Y-%m-%d")
 
+# get latest dorset figure
+latest_dor <- melt.cases %>%
+  filter(area=="cases_07da_dor") %>%
+  tail(1)
+
+# get latest bcp figure
+latest_bcp <- melt.cases %>%
+  filter(area=="cases_07da_bcp") %>%
+  tail(1)
+
 # PLOT DATA ----
 
 # create plot and geom
 covid_cases_plot <- ggplot() +
   geom_point(data = melt.cases, aes(x = date, y = cases, col = area), shape = 1, size = 2, show.legend = FALSE) + 
+  geom_hline(yintercept = latest_dor$cases, linetype = "dotted", colour = "green4", size = 0.75) +
+  geom_hline(yintercept = latest_bcp$cases, linetype = "dotted", colour = "magenta4", size = 0.75) +
   scale_colour_manual(name = "Local authority", values = c("cases_07da_dor" = "green4", "cases_07da_bcp" = "magenta4"), labels = c("BCP", "Dorset")) +
   labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "), subtitle = paste0("Daily numbers of new cases (people who have had at least one positive COVID-19 test result) in <span style='color:green4;'>Dorset</span> and <span style='color:magenta4;'>BCP</span>. Data are shown by the date the sample was taken from <br>the person being tested.")) +
   scale_y_continuous(position = "right") +

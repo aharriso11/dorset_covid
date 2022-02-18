@@ -39,16 +39,20 @@ less_recent_days <- Sys.Date() - 5
 less_seven_days <- less_recent_days - 7
 covid_cases_subset <- subset(covid_cases_csv, date < less_recent_days)
 
+# get most recent 07da
+latest07da <- head(covid_cases_subset$cases_07da,1)
+
 # PLOT DATA ----
 
 # set plot and geom
 covid_cases_plot <- ggplot() +
   # plot cases
   geom_point(data = covid_cases_subset, aes(x = date, y = cases_07da), shape = 1, colour = "red", size = 2) +
+  geom_hline(yintercept = latest07da, linetype = "dotted", colour = "red", size = 0.75) +
   # plot trend line
   geom_smooth(data = subset(covid_cases_csv, covid_cases_csv$date >= less_seven_days), aes(x = date, y = cases_07da), method = "lm", colour = "black", size=0.5, fullrange=FALSE, se=FALSE) +
   # set x and y axis
-  scale_y_continuous(trans = 'log10', breaks = c(1000,2000,5000,10000,20000,50000), position = "right") +
+  scale_y_continuous(trans = 'log10', breaks = c(1000,2000,5000,10000,20000,50000,120000), position = "right") +
   scale_x_date(date_labels = "%b %y", date_breaks = "1 month") +
   xlab("Date") +
   ylab("Cases") +
