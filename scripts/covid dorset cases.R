@@ -65,7 +65,7 @@ covid_cases_plot <- ggplot() +
   geom_hline(yintercept = latest_dor$cases, linetype = "dotted", colour = "green4", size = 0.75) +
   geom_hline(yintercept = latest_bcp$cases, linetype = "dotted", colour = "magenta4", size = 0.75) +
   scale_colour_manual(name = "Local authority", values = c("cases_07da_dor" = "green4", "cases_07da_bcp" = "magenta4"), labels = c("BCP", "Dorset")) +
-  labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "), subtitle = paste0("Daily numbers of new cases (people who have had at least one positive COVID-19 test result) in <span style='color:green4;'>Dorset</span> and <span style='color:magenta4;'>BCP</span>. Data are shown by the date the sample was taken from <br>the person being tested.")) +
+  labs(caption = paste("Data from UK Health Security Agency / https://coronavirus.data.gov.uk. Plotted", Sys.time(), sep = " "), subtitle = paste0("Daily numbers of new cases (people who have had at least one positive COVID-19 test result) in <span style='color:green4;'>Dorset</span> and <span style='color:magenta4;'>BCP</span>. Data are shown by the date the sample was taken from the person being tested.")) +
   scale_y_continuous(position = "right") +
   scale_x_date(date_labels = "%b %y", date_breaks = "1 month") +
   ggtitle("Dorset covid cases - 7 day average by specimen date (linear scale)") +
