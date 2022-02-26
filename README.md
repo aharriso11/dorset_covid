@@ -2,6 +2,8 @@ Data plots last updated: 2022-02-25
 
 # Andrew's Dorset and BCP covid statistics
 
+> In line with [recent changes made by UKHSA to covid statistics reporting](https://coronavirus.data.gov.uk/details/whats-new/record/65a19809-ffac-4cf7-b4fd-f1a3dad5cac2), this page will now no longer be updated at weekends.
+
 This is the output of me playing around with the [R statistical programming language](https://rafalab.github.io/dsbook/getting-started.html) and the coronavirus data produced on a daily basis by the UK Health Security Agency (UKHSA) and published at [https://coronavirus.data.gov.uk](https://coronavirus.data.gov.uk), focusing on the local authority areas of [Dorset](https://www.dorsetcouncil.gov.uk/) and [Bournemouth, Christchurch and Poole](https://www.bcpcouncil.gov.uk/).
 
 I'm publishing these interpretations of data already in the public domain purely for my personal interest. They're updated when I feel like it, and you should always check the dates on the data plots to see how old they are. To see the most up-to date information you should always check UKHSA's dashboard at [https://coronavirus.data.gov.uk](https://coronavirus.data.gov.uk). I am not a statistician or an epidemiologist, or any kind of expert in this field. **This information is offered on a best endeavours basis for your own interest and you should not use it for any other purpose.**
