@@ -1,4 +1,4 @@
-Data plots last updated: 2022-03-23
+Data plots last updated: 2022-03-24
 
 # Andrew's Dorset and BCP covid statistics
 
