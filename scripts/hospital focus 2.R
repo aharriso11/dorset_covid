@@ -209,7 +209,7 @@ rbd_plot2 <- ggplot(data = df_merged_activity_and_deaths, aes(x = date, y = tota
 
 rbd_plot2
 
-ggsave("output/hosp_rbd.png", plot = rbd_plot2, width = 16.6, height = 8.65, units = "in")
+ggsave("output/hosp_rbd.png", plot = rbd_plot2, width = 16.6, height = 8.65, units = "in", device = "png")
 
 
 
@@ -250,4 +250,4 @@ r0d_plot2 <- ggplot(data = df_merged_activity_and_deaths, aes(x = date, y = tota
 
 r0d_plot2
 
-ggsave("output/hosp_r0d.png", plot = r0d_plot2, width = 16.6, height = 8.65, units = "in")
+ggsave("output/hosp_r0d.png", plot = r0d_plot2, width = 16.6, height = 8.65, units = "in", device = "png")
