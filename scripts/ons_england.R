@@ -68,6 +68,11 @@ downloadurl <- paste("https://www.ons.gov.uk", url$urls[1], sep="")
 # download the survey file
 GET(downloadurl, write_disk("devel/onslatest.xlsx", overwrite = TRUE))
 
+# REPORT DATES ----
+df_cover <- read_excel("devel/onslatest.xlsx", sheet = "Cover sheet", skip = 10)
+date_publication <- strsplit((as.character(df_cover[7, ])), split = ": ")[[1]][[2]]
+date_next <- strsplit((as.character(df_cover[8, ])), split = ": ")[[1]][[2]]
+
 # ENGLAND ----
 
 # import data from downloaded file
@@ -85,8 +90,16 @@ df_eng_daily_number <-
 names(df_eng_daily_number)[names(df_eng_daily_number) == "95% Lower credible interval...6"] <- "ymin"
 names(df_eng_daily_number)[names(df_eng_daily_number) == "95% Upper credible interval...7"] <- "ymax"
 
+# get title dates
+date_first <- format(head(df_eng_daily_number$Date, 1), "%d %B")
+date_last <- format(tail(df_eng_daily_number$Date, 1), "%d %B")
+
 # convert wide data into long
 df_long <- gather(df_eng_daily_number, event, total, -c(Date))
+
+st1 <- paste("The modelled number of people in England testing positive for covid-19, from the ONS covid-19 infection survey.<br>
+       The lighter shaded area shows the <b>confidence interval</b> within which the actual number of infections might fall.<br>
+       This dataset was produced on <b>", date_publication, "</b> and covers dates between ", date_first, " and ", date_last, ". The next update will be on <b>", date_next, "</b>.", sep = "")
 
 # plot and geoms
 df_plot_eng <- ggplot() +
@@ -105,9 +118,7 @@ df_plot_eng <- ggplot() +
   # set title and subtitle
   ggtitle("Modelled daily rates of the percentage of the population testing positive for covid-19 in England") +
   labs(caption = paste("Data from the Office for National Statistics. Plotted", Sys.time(), sep = " ", "\nData plot by Andrew Harrison / https://aharriso11.github.io/dorset_covid"), 
-       subtitle = "The modelled number of people in England testing positive for covid-19, from the ONS covid-19 infection survey.<br>
-       The lighter shaded area shows the <b>confidence interval</b> within which the actual number of infections might fall.<br>
-       This dataset was produced on <b>1st April</b> and covers dates between 12th February and 26th March. The next update will be on <b>8th April</b>.") +
+       subtitle = paste0(st1)) +
   # set theme
   theme_base() +
   theme(
@@ -244,9 +255,17 @@ df_region_daily_numbers$VALUE <- as.numeric(as.character(df_region_daily_numbers
 df_region_daily_numbers_wide <- df_region_daily_numbers %>%
   pivot_wider(names_from = METRIC, values_from = VALUE)
 
+# get title dates
+date_first <- format(head(df_region_daily_numbers$Date, 1), "%d %B")
+date_last <- format(tail(df_region_daily_numbers$Date, 1), "%d %B")
+
 # Rename columns
 names(df_region_daily_numbers_wide)[names(df_region_daily_numbers_wide) == "95% Lower credible interval nm"] <- "ymin"
 names(df_region_daily_numbers_wide)[names(df_region_daily_numbers_wide) == "95% Upper credible interval nm"] <- "ymax"
+
+st2 <- paste("The modelled number of people in English regions testing positive for covid-19, from the ONS covid-19 infection survey.<br>
+       The lighter shaded area shows the <b>confidence interval</b> within which the actual number of infections might fall.<br>
+       This dataset was produced on <b> ", date_publication, " </b> and covers dates between ", date_first, " and ", date_last, ". The next update will be on <b>", date_next, "</b>.", sep = "")
 
 # plot and geoms
 df_plot_region_numbers <- ggplot() +
@@ -267,9 +286,7 @@ df_plot_region_numbers <- ggplot() +
   # set title and subtitle
   ggtitle("Modelled daily rates of the percentage of the population testing positive for covid-19 in English regions") +
   labs(caption = paste("Data from the Office for National Statistics. Plotted", Sys.time(), sep = " ", "\nData plot by Andrew Harrison / https://aharriso11.github.io/dorset_covid"), 
-       subtitle = "The modelled number of people in English regions testing positive for covid-19, from the ONS covid-19 infection survey.<br>
-       The lighter shaded area shows the <b>confidence interval</b> within which the actual number of infections might fall.<br>
-       This dataset was produced on <b>1st April</b> and covers dates between 12th February and 26th March. The next update will be on <b>8th April</b>.") +
+       subtitle = paste0(st2)) +
   # set theme
   theme_base() +
   theme(
