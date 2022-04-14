@@ -107,8 +107,8 @@ df_plot_eng <- ggplot() +
   geom_ribbon(data = df_eng_daily_number, aes(x = Date, ymin = ymin, ymax = ymax), fill = "thistle1") +
   # plot the modelled number and upper and lower intervals as xps lines
   geom_xspline(data = subset(df_long, event=="Modelled number of people testing positive for COVID-19"), aes(x = Date, y = total), stat = "xspline", size = 1.25, colour = "red4") +
-  geom_xspline(data = subset(df_long, event=="95% Lower credible interval"), aes(x = Date, y = total), stat = "xspline", colour = "thistle3") +
-  geom_xspline(data = subset(df_long, event=="95% Upper credible interval"), aes(x = Date, y = total), stat = "xspline", colour = "thistle3") +
+  geom_xspline(data = subset(df_long, event=="ymin"), aes(x = Date, y = total), stat = "xspline", colour = "thistle3") +
+  geom_xspline(data = subset(df_long, event=="ymax"), aes(x = Date, y = total), stat = "xspline", colour = "thistle3") +
   # scale settings
   scale_x_date(date_labels = "%d %b", date_breaks = "3 days") +
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6, accuracy = 0.1), position = "right") +
