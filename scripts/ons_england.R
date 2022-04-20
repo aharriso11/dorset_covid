@@ -137,10 +137,10 @@ df_plot_eng <- ggplot() +
   )
 
 # generate the plot
-df_plot_eng
+show(df_plot_eng)
 
 # save the plot
-ggsave("output/ons_england.png", plot = df_plot_eng, width = 16.6, height = 8.65, units = "in")
+ggsave("output/ons_england.png", width = 16.6, height = 8.65, units = "in", device = "png")
 
 # REGIONS ----
 
@@ -305,7 +305,7 @@ df_plot_region_numbers <- ggplot() +
   )
 
 # generate the plot
-df_plot_region_numbers
+show(df_plot_region_numbers)
 
 # save the plot
-ggsave("output/ons_regions.png", plot = df_plot_region_numbers, width = 16.6, height = 8.65, units = "in")
+ggsave("output/ons_regions.png", width = 16.6, height = 8.65, units = "in", device = "png")
