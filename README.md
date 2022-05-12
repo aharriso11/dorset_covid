@@ -2,7 +2,7 @@ Data plots last updated: 2022-05-10
 
 # Andrew's Dorset and BCP covid statistics
 
-{% octicon "alert" aria-label="The alert icon" %} Due to holiday, this page will not be updated until Monday 23rd May.
+**Due to holiday, this page will not be updated until Monday 23rd May.**
 
 > In line with [recent changes made by UKHSA to covid statistics reporting](https://coronavirus.data.gov.uk/details/whats-new/record/65a19809-ffac-4cf7-b4fd-f1a3dad5cac2), this page will now no longer be updated at weekends.
 
