@@ -136,11 +136,14 @@ df_plot_eng <- ggplot() +
     strip.text.y = element_text(size = 12)
   )
 
-# generate the plot
+# generate and save the plot
+# using base r png command as geom_xpsline seems to crash ggsave
+png("output/ons_england.png", width = 2000, height = 1000, units = "px", pointsize = 12, res = 100)
 show(df_plot_eng)
+dev.off()
 
 # save the plot
-ggsave("output/ons_england.png", width = 16.6, height = 8.65, units = "in", device = "png")
+# ggsave("output/ons_england.png", width = 16.6, height = 8.65, units = "in", device = "png")
 
 # REGIONS ----
 
@@ -304,8 +307,11 @@ df_plot_region_numbers <- ggplot() +
     strip.text.y = element_text(size = 12)
   )
 
-# generate the plot
+# generate and save the plot
+# using base r png command as geom_xpsline seems to crash ggsave
+png("output/ons_regions.png", width = 2000, height = 1000, units = "px", pointsize = 12, res = 100)
 show(df_plot_region_numbers)
+dev.off()
 
 # save the plot
-ggsave("output/ons_regions.png", width = 16.6, height = 8.65, units = "in", device = "png")
+# ggsave("output/ons_regions.png", width = 16.6, height = 8.65, units = "in", device = "png")
