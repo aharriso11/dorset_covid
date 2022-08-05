@@ -87,6 +87,7 @@ df_eng_daily_number <-
   remove_empty("rows")
 
 # Rename columns
+names(df_eng_daily_number)[names(df_eng_daily_number) == "Modelled number of people testing positive for COVID-19"] <- "modnum"
 names(df_eng_daily_number)[names(df_eng_daily_number) == "95% Lower credible interval...6"] <- "ymin"
 names(df_eng_daily_number)[names(df_eng_daily_number) == "95% Upper credible interval...7"] <- "ymax"
 
@@ -94,8 +95,22 @@ names(df_eng_daily_number)[names(df_eng_daily_number) == "95% Upper credible int
 date_first <- format(head(df_eng_daily_number$Date, 1), "%d %B")
 date_last <- format(tail(df_eng_daily_number$Date, 1), "%d %B")
 
-# convert wide data into long
+# convert last period wide data into long
 df_long <- gather(df_eng_daily_number, event, total, -c(Date))
+
+# import cumulative data file
+df_eng_cumul <- read.csv(file = "./devel/ons_eng_cumulative.csv")
+
+# define the date format
+df_eng_cumul$Date = as.Date(df_eng_cumul$Date, "%d/%m/%Y")
+
+# merge data
+df_merge <- rbind(df_eng_daily_number, df_eng_cumul)
+
+# convert cumulative wide data into long
+df_merge_long <- gather(df_merge, event, total, -c(Date))
+
+
 
 st1 <- paste("The modelled number of people in England testing positive for covid-19, from the ONS covid-19 infection survey.<br>
        The lighter shaded area shows the <b>confidence interval</b> within which the actual number of infections might fall.<br>
@@ -104,13 +119,13 @@ st1 <- paste("The modelled number of people in England testing positive for covi
 # plot and geoms
 df_plot_eng <- ggplot() +
   # Plot confidence interval as a ribbon
-  geom_ribbon(data = df_eng_daily_number, aes(x = Date, ymin = ymin, ymax = ymax), fill = "thistle1") +
+  # geom_ribbon(data = df_merge, aes(x = Date, ymin = ymin, ymax = ymax), fill = "thistle1") +
   # plot the modelled number and upper and lower intervals as xps lines
-  geom_xspline(data = subset(df_long, event=="Modelled number of people testing positive for COVID-19"), aes(x = Date, y = total), stat = "xspline", size = 1.25, colour = "red4") +
-  geom_xspline(data = subset(df_long, event=="ymin"), aes(x = Date, y = total), stat = "xspline", colour = "thistle3") +
-  geom_xspline(data = subset(df_long, event=="ymax"), aes(x = Date, y = total), stat = "xspline", colour = "thistle3") +
+  geom_xspline(data = subset(df_merge_long, event=="modnum"), aes(x = Date, y = total), stat = "xspline", size = 1.25, colour = "red4") +
+  # geom_xspline(data = subset(df_merge_long, event=="ymin"), aes(x = Date, y = total), stat = "xspline", colour = "thistle3") +
+  # geom_xspline(data = subset(df_merge_long, event=="ymax"), aes(x = Date, y = total), stat = "xspline", colour = "thistle3") +
   # scale settings
-  scale_x_date(date_labels = "%d %b", date_breaks = "3 days") +
+  scale_x_date(date_labels = "%d %b", date_breaks = "1 month") +
   scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6, accuracy = 0.1), position = "right") +
   # axis settings
   xlab("Date") +
@@ -138,7 +153,7 @@ df_plot_eng <- ggplot() +
 
 # generate and save the plot
 # using base r png command as geom_xpsline seems to crash ggsave
-png("output/ons_england.png", width = 2000, height = 1000, units = "px", pointsize = 12, res = 100)
+png("output/ons_england_t.png", width = 2000, height = 1000, units = "px", pointsize = 12, res = 100)
 show(df_plot_eng)
 dev.off()
 
