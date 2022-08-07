@@ -99,9 +99,9 @@ df_r0d <- get_data(
 
 # waves dataframe - as a tibble to allow use with fuzzy_join below
 df_waves <- tibble(
-  start = c(as.Date(c("2020-03-01")), as.Date(c("2020-09-01")), as.Date(c("2021-05-01"))),
-  end = c(as.Date(c("2020-08-31")), as.Date(c("2021-04-30")), as.Date(today())),
-  Wave = c("Wave 1", "Wave 2", "Wave 3")
+  start = c(as.Date(c("2020-03-01")), as.Date(c("2020-09-01")), as.Date(c("2021-05-01")), as.Date(c("2022-06-03"))),
+  end = c(as.Date(c("2020-08-31")), as.Date(c("2021-04-30")), as.Date(c("2022-06-02")), as.Date(today())),
+  Wave = c("Wave 1", "Wave 2", "Wave 3", "Wave BA.4 and BA.5")
 )
 
 # PROCESS DATA ----
@@ -143,6 +143,8 @@ df_latest <- df_combined %>%
   group_by(areaCode) %>%
   slice(which.max(date))
 
+df_combined <- df_combined[order(df_combined$date),]
+
 # EARLY EXPERIMENT WITH BASE PLOT----
 
 # png("hosp phase.png", width = 675, height = 675)
@@ -180,7 +182,7 @@ df_plot <- ggplot() +
   # faceting
   facet_wrap( ~ areaName, scales = "free") +
   # scale colours
-  scale_colour_manual(name = "Wave", values = c("Wave 1" = "red", "Wave 2" = "blue", "Wave 3" = "limegreen")) +
+  scale_colour_manual(name = "Wave", values = c("Wave 1" = "red", "Wave 2" = "blue", "Wave 3" = "limegreen", "Wave BA.4 and BA.5" = "purple")) +
   # axis settings
   xlab("New admissions to hospital with covid-19") +
   ylab("Cases of people in hospital with covid-19") +
@@ -189,7 +191,8 @@ df_plot <- ggplot() +
   labs(caption = paste("Data from the UK Health Security Agency. Plotted", Sys.time(), sep = " ", "\nData plot by Andrew Harrison / https://aharriso11.github.io/dorset_covid, and inspired by @bristoliver"), 
        subtitle = "The daily number of new admissions to hospital of patients with covid-19, compared with the daily number of confirmed covid-19 patients in hospital.<br>
        If the black dot goes up, the number of people in hospital with covid-19 is rising. If the black dot moves to the right, the number of people being admitted to hospital with covid-19 is rising.<br>
-       <b><span style='color:red;'>Wave 1</span></b> ran from 1st March 2020 to 31st August 2020. <b><span style='color:blue;'>Wave 2</span></b> ran from 1st September 2020 to 30th April 2021. <b><span style='color:limegreen;'>Wave 3</span></b> began on 1st May 2021 and is the current wave."
+       <b><span style='color:red;'>Wave 1</span></b> ran from 1st March 2020 to 31st August 2020. <b><span style='color:blue;'>Wave 2</span></b> ran from 1st September 2020 to 30th April 2021. <b><span style='color:limegreen;'>Wave 3</span></b>ran from May 2021 to June 2022.<br>
+       <b><span style='color:purple;'>The current wave</span></b> began on 3rd June 2022 and covers Omicron sub-variants BA.4 and BA.5. Please note the different scales of each graph."
        ) +
     # set theme and customisations
   theme_base() +
