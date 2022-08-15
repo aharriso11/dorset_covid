@@ -11,9 +11,9 @@ Google publish country level summaries of this data on their website but make mo
 
 - our visits to grocery and pharmacy premises sharply declined at the start of each lockdown, but eventually recovered and through much of 2021 were above the baseline figure;
 - we've been spending far more time in our parks and open spaces, although this is very weather dependent and tails off noticeably over winter;
-- our use of public transport has stayed below the baseline for most of the period;
+- our use of public transport has stayed below the baseline for most of the period, and has only recently risen above the baseline;
 - unsurprisingly, we've all been spending more time at home - a pattern that has been maintained through the period;
-- retail and recreation visits stayed below the baseline apart from a brief period in summer 2021 and a more prolonged period in summer 2021;
+- retail and recreation visits stayed below the baseline apart from a brief period in summer 2021 and a more prolonged period in summer 2021, and has only recently risen above the baseline;
 - we've spent a lot less time in the workplace, something that has been maintained since the start of covid.
 
 [![Mobility data](./output/mobility.png)](./output/mobility.png?raw=true)
@@ -21,9 +21,9 @@ Google publish country level summaries of this data on their website but make mo
 [View the underlying code that produces this plot](https://github.com/aharriso11/dorset_covid/blob/main/scripts/google%20mobility.R)
 
 ## Covid variant prevalence
-This data set is made available by the [UK Health Security Agency](https://www.gov.uk/government/organisations/uk-health-security-agency) as part of their [covid technical briefings](https://www.gov.uk/government/publications/investigation-of-sars-cov-2-variants-technical-briefings). These briefings are released fairly frequently but on an irregular basis. The most recent briefing (number 36) was released on 11th February 2022 and provides information on cases sequenced between 1st February 2021 and 7th February 2022.
+This data set is made available by the [UK Health Security Agency](https://www.gov.uk/government/organisations/uk-health-security-agency) as part of their [covid technical briefings](https://www.gov.uk/government/publications/investigation-of-sars-cov-2-variants-technical-briefings). These briefings are released fairly frequently but on an irregular basis. The most recent briefing (number 44) was released on 22nd July 2022 and provides information on cases sequenced between 1st February 2021 and 18th July 2022.
 
-The variant prevalence data set shows the overwhelming prevalence of the Alpha "Kent" variant throughout the winter and into spring, whereupon it is quickly edged out by the Delta variant through May and June. The Omicron variant appears in late November and quickly edges out the Delta variant. More recently, growth of the BA2 variant can also be seen.
+The variant prevalence data set shows the overwhelming prevalence of the Alpha "Kent" variant throughout the winter of 2020 and into spring of 2021, whereupon it is quickly edged out by the Delta variant through May and June. The Omicron variant appears in late November and quickly edges out the Delta variant. More recently, growth of the BA2, BA4 and BA5 variants can also be seen.
 
 [![Variant data](./output/england_variants.png)](./output/england_variants.png?raw=true)
 

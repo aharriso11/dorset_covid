@@ -57,13 +57,13 @@ df_structure <- c(date = "date",
   newAdmissions = 'newAdmissions'
 )
 
-# call Dorset data
+# call RBD (DCH) data
 df_rbd <- get_data(
   filters = filter_rbd, 
   structure = df_structure
 )
 
-# call BCP data
+# call R0D (UHD) data
 df_r0d <- get_data(
   filters = filter_r0d,
   structure = df_structure
@@ -73,7 +73,7 @@ df_r0d <- get_data(
 # the url for the spreadsheet containing the deaths data changes every week
 
 # set url for web page containing link to the deaths data
-deathpage <- read_html(url("https://www.england.nhs.uk/statistics/statistical-work-areas/covid-19-daily-deaths/"))
+deathpage <- read_html(url("https://www.england.nhs.uk/statistics/statistical-work-areas/covid-19-deaths/"))
 
 # extract all the URLs from the page
 urls <- deathpage %>%
@@ -96,7 +96,7 @@ stringsAsFactors = FALSE)
 # we figure this out through trial, error and mk 1 eyeball
 deathurl <- df_links %>%
   filter(str_detect(urls, "COVID-19-total-announced-deaths")) %>%
-  filter(str_detect(urls, "weekly", negate = TRUE))
+  filter(str_detect(urls, "supplementary", negate = TRUE))
 
 # download the file
 GET(deathurl$urls[1], write_disk("devel/nhsdeaths.xlsx", overwrite = TRUE))
@@ -110,14 +110,15 @@ df_deaths <- read_excel("devel/nhsdeaths.xlsx", sheet = "Tab4a Deaths by trust",
 # 1 - place datasets into a single list
 df_list <- list(df_r0d, df_rbd)
 
-# 2 - merge the datasets in the list into vaccs_combined
+# 2 - merge the datasets in the list into df_combined
 df_combined <- merge_recurse(df_list)
 
 # define the date format
 df_combined$date = as.Date(df_combined$date, "%Y-%m-%d")
 
 # convert wide data into long
-df_long <- gather(df_combined, event, total, hospitalCases:last_col())
+# df_long <- gather(df_combined, event, total, hospitalCases:last_col())
+df_long <- gather(df_combined, event, total, -c(areaCode, areaType, areaName, date))
 
 # restrict to twelve weeks
 df_long <- subset(df_long, date > today() - weeks(12))
