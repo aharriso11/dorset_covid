@@ -27,7 +27,7 @@ The variant prevalence data set shows the overwhelming prevalence of the Alpha "
 
 [![Variant data](./output/england_variants.png)](./output/england_variants.png?raw=true)
 
-[View the underlying code that produces this plot](https://github.com/aharriso11/dorset_covid/blob/main/scripts/Variant%20prevalence/covid%20variants%2036.R)
+[View the underlying code that produces this plot](https://github.com/aharriso11/dorset_covid/blob/main/scripts/Variant%20prevalence/covid%20variants%2044.R)
 
 ## A comparison of covid vaccination status with deprivation
 This data plot combines two data sets: the percentage of people who have not yet received  a first covid vaccination, plotted against the [index of multiple deprivations](https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019) score in their area. The data plot shows:
