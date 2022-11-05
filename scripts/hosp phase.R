@@ -182,7 +182,7 @@ df_plot <- ggplot() +
   # faceting
   facet_wrap( ~ areaName, scales = "free") +
   # scale colours
-  scale_colour_manual(name = "Wave", values = c("Wave 1" = "red", "Wave 2" = "blue", "Wave 3" = "limegreen", "Wave BA.4 and BA.5" = "purple")) +
+  scale_colour_manual(name = "Wave", values = c("Wave 1" = "indianred1", "Wave 2" = "lightskyblue", "Wave 3" = "palegreen", "Wave BA.4 and BA.5" = "purple")) +
   # axis settings
   xlab("New admissions to hospital with covid-19") +
   ylab("Cases of people in hospital with covid-19") +
