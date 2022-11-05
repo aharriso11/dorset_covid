@@ -58,6 +58,14 @@ lockdowns <- data.frame(
   ymax = c(Inf, Inf, Inf)
 )
 
+# other restrictions
+restrictions <- data.frame(
+  xmin = c(as.Date(c("2021-12-08"))),
+  xmax = c(as.Date(c("2022-01-27"))),
+  ymin = c(-Inf),
+  ymax = c(Inf)
+)
+
 # MUNGE DATA ----
   
 # merge datasets into one
@@ -118,15 +126,27 @@ mobility_plot <- ggplot() +
     ymax = ymax
     )
   ) +
+  # shaded areas to denote other restrictions
+  geom_rect(
+    data = restrictions,
+    fill = "thistle2", alpha = 0.5,
+    aes(
+      xmin = xmin,
+      xmax = xmax,
+      ymin = ymin,
+      ymax = ymax
+    )
+  ) +
   # grey line to indicate baseline
   geom_hline(yintercept = 0, colour = "black") +
   # main data plot
   geom_area(data = mobility_long, aes(x = date, y = percent_change_from_baseline), size = 0.75, colour = "springgreen4", fill = "#94d3b2", position = "stack") +
-  # text annotations to indicate lockdowns
+  # text annotations to indicate lockdowns and restrictions
   # x value takes the start date from the lockdowns dataframe and adds twelve for positioning
   annotate("text", x = lockdowns$xmin[1]+12, y = 250, label = "Lockdown 1", size = 2.5, colour = "darkblue", fontface = "bold", angle = 90) +
   annotate("text", x = lockdowns$xmin[2]+12, y = 250, label = "Lockdown 2", size = 2.5, colour = "darkblue", fontface = "bold", angle = 90) +
   annotate("text", x = lockdowns$xmin[3]+12, y = 250, label = "Lockdown 3", size = 2.5, colour = "darkblue", fontface = "bold", angle = 90) +
+  annotate("text", x = restrictions$xmin[1]+12, y = 250, label = "Plan B", size = 2.5, colour = "violetred4", fontface = "bold", angle = 90) +
   # facet by activity
   facet_wrap(~ activity) +
   # set scales
