@@ -4,16 +4,16 @@
 setwd("~/Documents/GitHub/dorset_covid")
 
 # set technical briefing spreadsheet path
-sheet_path <- "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1093222/variants-of-concern-technical-briefing-44-data-england-22-july-2022.ods"
+sheet_path <- "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1114285/Variants-of-concern-technical-briefing-47-data-england.ods"
 
 # set plot title
-plot_subtitle <- "Variant prevalence for all England available sequenced cases from 1 February 2021 as of 18 July 2022"
+plot_subtitle <- "Variant prevalence for all England available sequenced cases from 1 February 2021 as of 24 October 2022"
 
 # set plot caption
-plot_caption <- "Data from UK Health Security Agency technical briefing 44 (gateway number GOV-12795)."
+plot_caption <- "Data from UK Health Security Agency technical briefing 44 (gateway number GOV-13512)."
 
 # set file name
-file_name <- "devel/techreport44.ods"
+file_name <- "devel/techreport47.ods"
 
 # Install the pacman package to call all the other packages
 if (!require("pacman")) install.packages("pacman")
@@ -41,7 +41,7 @@ pacman::p_load(
 GET(sheet_path, write_disk(file_name, overwrite = TRUE))
 
 # Import raw data from Excel
-covid_variant_data <- read_ods(file_name, sheet = "Fig4", skip = 2) 
+covid_variant_data <- read_ods(file_name, sheet = "Fig6", skip = 2) 
 
 # MUNGE DATA ----
 
@@ -58,7 +58,7 @@ covid_variant_plot <- ggplot() +
   # plot data in a stacked format
   geom_area(data = covid_variant_data, aes(x = week, y = case_prevelance, group = variant, fill = variant), position = "stack") +
   # scale settings
-  scale_fill_manual(name = "Variant", values = as.vector(inferno(23))) +
+  scale_fill_manual(name = "Variant", values = as.vector(inferno(25))) +
   scale_x_date(date_labels = "%b %y", date_breaks = "2 months") +
   scale_y_continuous(labels = scales::percent) +
   # axis settings
