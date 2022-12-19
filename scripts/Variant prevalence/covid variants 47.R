@@ -10,7 +10,7 @@ sheet_path <- "https://assets.publishing.service.gov.uk/government/uploads/syste
 plot_subtitle <- "Variant prevalence for all England available sequenced cases from 1 February 2021 as of 24 October 2022"
 
 # set plot caption
-plot_caption <- "Data from UK Health Security Agency technical briefing 44 (gateway number GOV-13512)."
+plot_caption <- "Data from UK Health Security Agency technical briefing 47 (gateway number GOV-13512)."
 
 # set file name
 file_name <- "devel/techreport47.ods"
